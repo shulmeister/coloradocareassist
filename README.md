@@ -12,11 +12,13 @@ Premium home care agency marketing site built with Next.js, designed for deploym
 - **Analytics**: Google Tag Manager / GA4 + Meta Pixel
 - **Chat**: Facebook Messenger
 - **Reviews**: Trustpilot
+- **CMS/Admin**: Custom Dashboard (Next.js + GitHub API + Iron Session)
 
 ## 📋 Table of Contents
 
 - [Local Development](#local-development)
 - [Environment Variables](#environment-variables)
+- [Admin Dashboard](#admin-dashboard)
 - [Heroku Deployment](#heroku-deployment)
 - [DNS Configuration (Hostinger)](#dns-configuration-hostinger)
 - [Integration Setup](#integration-setup)
@@ -144,6 +146,31 @@ NEXT_PUBLIC_GA4_ID=G-XXXXXXXXXX
 ```env
 NEXT_PUBLIC_SITE_URL=https://coloradocareassist.com
 ```
+
+#### Admin Dashboard
+```env
+ADMIN_PASSWORD=your_secure_password
+SECRET_COOKIE_PASSWORD=your_long_random_string_at_least_32_chars
+GITHUB_TOKEN=your_github_personal_access_token
+GITHUB_REPO_OWNER=shulmeister
+GITHUB_REPO_NAME=coloradocareassist
+```
+
+---
+
+## 🛠️ Admin Dashboard
+
+The site includes a built-in CMS at `/admin/login` for managing content.
+
+### Features
+- **Dashboard**: Quick stats and links.
+- **Contacts**: View leads captured from the contact form (synced from Brevo).
+- **Blog Posts**: Create, edit, and publish blog articles directly to the site.
+
+### How it Works
+- **Authentication**: Uses `iron-session` for secure, encrypted cookie-based sessions.
+- **Content Management**: Uses the GitHub API to read/write markdown files in the `_posts/` directory.
+- **Publishing**: When you save a post, it commits the file to the repository, triggering a Heroku rebuild. Changes go live in ~1-2 minutes.
 
 ---
 
