@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import CookieConsent from '@/components/CookieConsent';
-import TawkTo from '@/components/integrations/TawkTo';
 import Analytics from '@/components/integrations/Analytics';
 import '@/styles/globals.css';
 
@@ -44,9 +43,6 @@ export default function App({ Component, pageProps }: AppProps) {
       
       {/* Main Content */}
       <Component {...pageProps} />
-      
-      {/* Live Chat Widget */}
-      <TawkTo />
       
       {/* Cookie Consent Banner */}
       <CookieConsent />

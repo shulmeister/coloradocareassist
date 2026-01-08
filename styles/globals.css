@@ -221,15 +221,3 @@ img {
   color: var(--color-brown);
 }
 
-/* Tawk Chat Widget - De-emphasize on mobile */
-@media (max-width: 768px) {
-  #tawk-bubble-container {
-    bottom: 60px !important;
-    right: 10px !important;
-  }
-  
-  iframe[title*="chat"] {
-    max-width: 280px !important;
-  }
-}
-
