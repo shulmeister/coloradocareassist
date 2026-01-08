@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import '@/styles/globals.css';
 import FacebookMessenger from '@/components/integrations/FacebookMessenger';
 import Analytics from '@/components/integrations/Analytics';
+import CookieConsent from '@/components/CookieConsent';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <FacebookMessenger />
       <Analytics />
+      <CookieConsent />
     </SWRConfig>
   );
 }

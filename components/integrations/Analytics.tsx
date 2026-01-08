@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react';
 
 export default function Analytics() {
   const [hasConsent, setHasConsent] = useState(false);
-  const analyticsEnabled = process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true';
+  // Default to true unless explicitly disabled
+  const analyticsEnabled = process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'false';
+  
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
   const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
+  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   useEffect(() => {
@@ -59,24 +62,23 @@ export default function Analytics() {
         </>
       )}
 
-      {/* Google Analytics 4 (if GTM not used) */}
-      {!gtmId && ga4Id && (
+      {/* Google Analytics 4 & Google Ads */}
+      {(ga4Id || googleAdsId) && (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id || googleAdsId}`}
             strategy="afterInteractive"
           />
           <Script
-            id="ga4-script"
+            id="gtag-init"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${ga4Id}', {
-                  page_path: window.location.pathname,
-                });
+                ${ga4Id ? `gtag('config', '${ga4Id}', { page_path: window.location.pathname });` : ''}
+                ${googleAdsId ? `gtag('config', '${googleAdsId}');` : ''}
               `,
             }}
           />
@@ -112,7 +114,7 @@ export default function Analytics() {
 export function trackFormSubmission(formType: string) {
   if (typeof window === 'undefined') return;
 
-  // Google Analytics / GTM
+  // Google Analytics / GTM / Ads
   if ((window as any).gtag) {
     (window as any).gtag('event', 'generate_lead', {
       event_category: 'Form',
@@ -127,4 +129,3 @@ export function trackFormSubmission(formType: string) {
     });
   }
 }
-
