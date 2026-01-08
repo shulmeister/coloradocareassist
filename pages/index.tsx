@@ -342,7 +342,13 @@ export default function Home() {
 
             <div className={styles.faqItem}>
               <h3>How does pricing work?</h3>
-              <p>One hourly or day rate covers all services. No service tiers, no hidden fees. Call for a custom quote based on your needs.</p>
+              <p>Our pricing is simple and transparent:</p>
+              <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem', color: 'var(--color-charcoal)' }}>
+                <li><strong>Colorado Springs / Pueblo:</strong> $40/hour</li>
+                <li><strong>Denver / Boulder:</strong> $43/hour</li>
+                <li><strong>24-Hour Live-In:</strong> $650/day (one caregiver)</li>
+              </ul>
+              <p>We have a 3-hour minimum per visit. We accept all forms of payment, including credit cards, ACH, and Bitcoin.</p>
             </div>
 
             <div className={styles.faqItem}>

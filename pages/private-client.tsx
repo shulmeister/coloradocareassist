@@ -20,10 +20,11 @@ export default function PrivateClient() {
 
         <h2>Downloads</h2>
         <ul>
-          <li><a href="/docs/coi.txt" download>Certificate of Insurance (placeholder)</a></li>
-          <li><a href="/docs/sample_service_agreement.txt" download>Sample Service Agreement (placeholder)</a></li>
+          <li><a href="/docs/2025-2026%20LICENSE%20COLORADO%20CAREASSIST%2004Y296.pdf" target="_blank" rel="noopener noreferrer">State License (2025-2026)</a></li>
+          <li><a href="/docs/CLIENT%20PACKET%20-%20%20SAMPLE.pdf" target="_blank" rel="noopener noreferrer">Client Packet / Contract (Sample)</a></li>
+          <li><a href="/docs/COI%20Liability.pdf" target="_blank" rel="noopener noreferrer">Certificate of Liability Insurance</a></li>
+          <li><a href="/docs/COI%20Workmans%20Comp%20Accord%20Form.pdf" target="_blank" rel="noopener noreferrer">Certificate of Workers' Comp</a></li>
           <li><a href="/docs/sample_baa.txt" download>Sample BAA (placeholder)</a></li>
-          <li><a href="/docs/sample_pricing.txt" download>Sample Pricing Guide (example ranges)</a></li>
         </ul>
       </div>
     </Layout>
