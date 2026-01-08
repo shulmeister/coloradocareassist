@@ -59,7 +59,7 @@ async function checkRateLimit(ip: string): Promise<boolean> {
     }
   } catch (err) {
     // Redis error -> fall through to in-memory fallback
-    console.error('Redis rate limit error, falling back to memory limiter', err?.message || err);
+    console.error('Redis rate limit error, falling back to memory limiter', (err as any)?.message || err);
   }
 
   // In-memory fallback (works only for single-process dev / small Heroku apps)
@@ -142,7 +142,7 @@ export default async function handler(
     }
   } catch (err) {
     // If rate limit check fails unexpectedly, log and allow (fail open)
-    console.error('Rate limit check failed:', err?.message || err);
+    console.error('Rate limit check failed:', (err as any)?.message || err);
   }
 
   // Validate environment variables
