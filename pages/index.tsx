@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import Trustpilot from '@/components/integrations/Trustpilot';
+import FAQ from '@/components/FAQ';
 import styles from '@/styles/Home.module.css';
 
 export default function Home() {
@@ -345,76 +346,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className={styles.faq}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2>Frequently Asked Questions</h2>
-          </div>
-          
-          <div className={styles.faqGrid}>
-            <div className={styles.faqItem}>
-              <h3>What does "Complete Home Care" mean?</h3>
-              <p>One team handles daily living support, housekeeping, meal prep, errands, transportation, handyman work, and pet care. No need to coordinate multiple providers.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>How does pricing work?</h3>
-              <p>Our pricing is simple and transparent:</p>
-              <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem', color: 'var(--color-charcoal)' }}>
-                <li><strong>Colorado Springs / Pueblo:</strong> $40/hour</li>
-                <li><strong>Denver / Boulder:</strong> $43/hour</li>
-                <li><strong>24-Hour Live-In:</strong> $650/day (one caregiver)</li>
-              </ul>
-              <p>We have a 3-hour minimum per visit. We accept all forms of payment, including credit cards, ACH, and Bitcoin.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>How reliable is scheduling?</h3>
-              <p>We pay caregivers more and offer benefits, resulting in lower turnover and higher reliability. Backup coverage is standard.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>What background checks do you perform?</h3>
-              <p>CBI background checks, CAPS verification, DMV checks, and random drug testing throughout the year. Every caregiver is screened.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Are you insured and bonded?</h3>
-              <p>Yes. $3 million in liability insurance and honesty bonds protect you and your home.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Do you provide dementia care training?</h3>
-              <p>Yes. All caregivers receive specialized dementia care training. We understand memory care needs.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Do you work with veterans?</h3>
-              <p>Yes. Veteran care training is standard. We assist with VA benefits navigation when applicable.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Do you offer private client services?</h3>
-              <p>Yes. Our <Link href="/private-client">Private Client Concierge</Link> offers dedicated account management, priority scheduling, and direct coordination with estate planners and fiduciaries.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>What is the Family Room portal?</h3>
-              <p>A secure digital portal for authorized family members, POAs, and estate managers. View care notes, schedules, and billing in real time.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Are you a franchise?</h3>
-              <p>No. Family-owned and Colorado-based since 2012. Independent operation, not corporate policies.</p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>What areas do you serve?</h3>
-              <p>Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo, and surrounding areas along the Front Range.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQ />
 
       {/* Final CTA */}
       <section className={styles.finalCta}>
