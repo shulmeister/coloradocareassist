@@ -7,8 +7,9 @@ export default function Analytics() {
   const analyticsEnabled = process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'false';
   
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
-  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID;
-  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  // Use env var or fallback to known correct ID
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_ID || 'G-PNPKTPZ49H';
+  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-16672094756';
   const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   useEffect(() => {
