@@ -1,6 +1,5 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
-import Image from 'next/image';
 import Trustpilot from '@/components/integrations/Trustpilot';
 import styles from '@/styles/Home.module.css';
 
@@ -46,13 +45,17 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.heroImage}>
-            <Image
+            <img
               src="/images/hero.jpg"
               alt="Colorado CareAssist: calm, professional care in a home setting"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.heroImg}
+              loading="eager"
+              decoding="async"
+              onError={(e) => {
+                const img = e.currentTarget;
+                img.style.display = 'none';
+                img.closest(`.${styles.heroImage}`)?.classList.add(styles.imageMissing);
+              }}
             />
           </div>
         </div>
@@ -326,12 +329,17 @@ export default function Home() {
       <section className={styles.imageBand}>
         <div className={styles.imageBandContainer}>
           <div className={styles.imageBandFrame}>
-            <Image
+            <img
               src="/images/band.jpg"
               alt="Colorado setting"
-              fill
-              sizes="100vw"
               className={styles.imageBandImg}
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                const img = e.currentTarget;
+                img.style.display = 'none';
+                img.closest(`.${styles.imageBandFrame}`)?.classList.add(styles.imageMissing);
+              }}
             />
           </div>
         </div>
