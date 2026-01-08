@@ -1,28 +1,9 @@
-import { useEffect } from 'react';
+import Script from 'next/script';
 import styles from './Trustpilot.module.css';
 
 export default function Trustpilot() {
   const trustpilotEnabled = process.env.NEXT_PUBLIC_TRUSTPILOT_ENABLED === 'true';
   const businessUnitId = process.env.NEXT_PUBLIC_TRUSTPILOT_BUSINESS_UNIT_ID;
-
-  useEffect(() => {
-    if (!trustpilotEnabled || !businessUnitId) {
-      return;
-    }
-
-    // Load Trustpilot widget script
-    const script = document.createElement('script');
-    script.src = 'https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, [trustpilotEnabled, businessUnitId]);
 
   if (!trustpilotEnabled) {
     return null;
@@ -50,6 +31,10 @@ export default function Trustpilot() {
 
   return (
     <div className={styles.widget}>
+      <Script 
+        src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" 
+        strategy="lazyOnload" 
+      />
       {/* Trustpilot TrustBox widget */}
       <div
         className="trustpilot-widget"
