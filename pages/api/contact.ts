@@ -12,7 +12,9 @@ try {
     // If not available, we'll catch and keep redisClient null.
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const IORedis = require('ioredis');
-    redisClient = new IORedis(process.env.REDIS_URL);
+    redisClient = new IORedis(process.env.REDIS_URL, {
+      tls: { rejectUnauthorized: false }
+    });
   }
 } catch (e) {
   redisClient = null;
