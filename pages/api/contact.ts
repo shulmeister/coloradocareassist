@@ -310,6 +310,7 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
 
     if (rcClientId && rcClientSecret && rcJwt && rcFrom && rcTo) {
       console.log('Sending SMS notification via RingCentral...');
+      console.log(`RC Server: ${rcServer}`);
       try {
         const RingCentral = require('@ringcentral/sdk').SDK;
         const rcsdk = new RingCentral({
@@ -319,7 +320,9 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
         });
         const platform = rcsdk.platform();
 
+        console.log('Attempting RC Login...');
         await platform.login({ jwt: rcJwt });
+        console.log('RC Login successful.');
 
         const smsText = `New Lead: ${formData.name} (${formData.phone}) in ${formData.location}. Needs: ${formData.care_needs.substring(0, 50)}...`;
 
