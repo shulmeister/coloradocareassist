@@ -17,11 +17,11 @@ export default function Footer() {
             </p>
             <div className={styles.contact}>
               <p>
-                <strong>Denver/Boulder:</strong><br />
+                <strong>Denver/Boulder (Call or Text):</strong><br />
                 <a href="tel:+13037571777">(303) 757-1777</a>
               </p>
               <p>
-                <strong>Colorado Springs/Pueblo:</strong><br />
+                <strong>Colorado Springs/Pueblo (Call or Text):</strong><br />
                 <a href="tel:+17194283999">(719) 428-3999</a>
               </p>
               <p>

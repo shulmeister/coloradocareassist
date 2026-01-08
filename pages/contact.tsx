@@ -85,7 +85,7 @@ export default function Contact() {
             {/* Contact Information */}
             <div className={styles.contactInfo}>
               <div className={styles.infoCard}>
-                <h2>📞 Call Us</h2>
+                <h2>📞 Call or Text Us</h2>
                 <div className={styles.phoneNumbers}>
                   <div>
                     <strong>Denver/Boulder</strong>

@@ -298,6 +298,38 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
       // Don't fail the request if auto-reply fails, as the lead was already captured
     }
 
+    // Send SMS Notification via Beetexting (Optional)
+    const beetextingApiKey = process.env.BEETEXTING_API_KEY;
+    const beetextingFrom = process.env.BEETEXTING_FROM_NUMBER;
+    const beetextingTo = process.env.BEETEXTING_TO_NUMBER;
+
+    if (beetextingApiKey && beetextingFrom && beetextingTo) {
+      try {
+        const smsText = `New Lead: ${formData.name} (${formData.phone}) in ${formData.location}. Needs: ${formData.care_needs.substring(0, 50)}...`;
+        
+        // Beetexting API: POST https://connect.beetexting.com/prod/message/sendsms
+        const params = new URLSearchParams({
+          from: beetextingFrom,
+          to: beetextingTo,
+          text: smsText
+        });
+
+        const smsResponse = await fetch(`https://connect.beetexting.com/prod/message/sendsms?${params.toString()}`, {
+          method: 'POST',
+          headers: {
+            'x-api-key': beetextingApiKey
+          }
+        });
+
+        if (!smsResponse.ok) {
+           console.error('Beetexting SMS failed:', await smsResponse.text());
+        }
+      } catch (smsError) {
+        console.error('Failed to send Beetexting SMS:', smsError);
+        // Don't fail the request if SMS fails
+      }
+    }
+
     // Success response
     return res.status(200).json({
       success: true,

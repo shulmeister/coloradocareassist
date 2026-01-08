@@ -75,8 +75,6 @@ npm run lint     # Run ESLint
 
 ## 🔐 Environment Variables
 
-Create a `.env.local` file (for local development) or set Config Vars in Heroku (for production).
-
 ### Required Variables
 
 #### Brevo Email (Contact Form)
@@ -293,15 +291,13 @@ heroku logs --tail
 4. **Set Environment Variables** (see above)
 5. **Test**: Submit contact form and check email delivery
 
-### Tawk.to Live Chat (Currently Disabled)
+### Facebook Messenger
 
-**Status**: Widget integration disabled - planning custom chat UI with Tawk.to API
+**Status**: Enabled via Environment Variable
 
-**Why**: Standard widget doesn't match brand aesthetic. Planning custom implementation for better design control.
-
-**Current Solution**: Site uses contact form + prominent phone numbers. Works great without live chat.
-
-**Future Enhancement**: Can build custom chat interface using Tawk.to REST API for full design control while still using Tawk.to backend (free).
+**Configuration**:
+1. Set `NEXT_PUBLIC_FACEBOOK_PAGE_ID` in Heroku Config Vars.
+2. The chat plugin will automatically appear on all pages.
 
 ### Trustpilot Reviews
 
@@ -364,12 +360,12 @@ heroku logs --tail
 3. Verify pixel loads and fires PageView event
 4. Submit contact form → verify Lead event fires
 
-### Tawk.to Verification
+### Facebook Messenger Verification
 
 1. Visit any page on your site
 2. Chat widget should appear in bottom-right corner
-3. Test sending a message
-4. Check Tawk.to dashboard for received messages
+3. Test sending a message (requires logging into Facebook)
+4. Check Facebook Page Inbox for received messages
 
 ### Trustpilot Verification
 
@@ -461,13 +457,12 @@ CSS variables are defined in `styles/globals.css` for easy theme customization.
 - Wrong ID format
 - `NEXT_PUBLIC_ANALYTICS_ENABLED` not set to `true`
 
-### Tawk.to Widget Not Appearing
+### Facebook Messenger Widget Not Appearing
 
 **Check:**
-1. `NEXT_PUBLIC_TAWK_ENABLED=true`
-2. Property ID and Widget ID are correct
-3. Check browser console for errors
-4. Verify IDs in Tawk.to dashboard
+1. `NEXT_PUBLIC_FACEBOOK_PAGE_ID` is set correctly
+2. Check browser console for errors
+3. Ensure domain is whitelisted in Facebook Page settings (Advanced Messaging)
 
 ### DNS Not Resolving
 

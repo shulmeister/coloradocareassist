@@ -420,10 +420,10 @@ export default function Home() {
               Request a Care Plan
             </Link>
             <a href="tel:+13037571777" className={styles.secondaryCta}>
-              Call Denver: (303) 757-1777
+              Call/Text Denver: (303) 757-1777
             </a>
             <a href="tel:+17194283999" className={styles.secondaryCta}>
-              Call Springs: (719) 428-3999
+              Call/Text Springs: (719) 428-3999
             </a>
           </div>
         </div>
@@ -432,7 +432,7 @@ export default function Home() {
       {/* Mobile Sticky CTA Bar */}
       <div className={styles.mobileStickyBar}>
         <a href="tel:+13037571777" className={styles.mobileCallBtn}>
-          Call
+          Call/Text
         </a>
         <Link href="/contact" className={styles.mobileRequestBtn}>
           Request Care Plan

@@ -46,6 +46,7 @@ export default function Header() {
       <div className={styles.topBar}>
         <div className={styles.container}>
           <div className={styles.contactInfo}>
+            <span className={styles.topBarLabel}>Call or Text:</span>
             <a href="tel:+13037571777" className={styles.topBarLink}>
               (303) 757-1777
             </a>
@@ -187,10 +188,10 @@ export default function Header() {
           
           <div className={styles.mobilePhones}>
             <a href="tel:+13037571777" className={styles.mobilePhone}>
-              Denver/Boulder: (303) 757-1777
+              Call/Text Denver: (303) 757-1777
             </a>
             <a href="tel:+17194283999" className={styles.mobilePhone}>
-              Colorado Springs/Pueblo: (719) 428-3999
+              Call/Text Colo Springs: (719) 428-3999
             </a>
             <a href="mailto:care@coloradocareassist.com" className={styles.mobilePhone}>
               care@coloradocareassist.com
