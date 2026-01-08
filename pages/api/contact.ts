@@ -323,8 +323,24 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
 
         const smsText = `New Lead: ${formData.name} (${formData.phone}) in ${formData.location}. Needs: ${formData.care_needs.substring(0, 50)}...`;
 
+        // Dynamically find a valid 'from' number for the logged-in user
+        // to avoid 'Resource not found' errors if the configured number doesn't belong to the extension.
+        const phoneNumbersResponse = await platform.get('/restapi/v1.0/account/~/extension/~/phone-number');
+        const phoneNumbers = await phoneNumbersResponse.json();
+        
+        const validSender = phoneNumbers.records.find((record: any) => 
+          record.features && record.features.includes('SmsSender')
+        );
+
+        if (!validSender) {
+          throw new Error('No SMS-capable phone number found for this extension.');
+        }
+
+        const fromNumber = validSender.phoneNumber;
+        console.log(`Sending RingCentral SMS from: ${fromNumber}`);
+
         const response = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
-          from: { phoneNumber: rcFrom },
+          from: { phoneNumber: fromNumber },
           to: [{ phoneNumber: rcTo }],
           text: smsText
         });
