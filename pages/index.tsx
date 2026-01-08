@@ -73,36 +73,37 @@ export default function Home() {
                 <span>Background checked</span>
               </div>
 
+              <div className={styles.trustBadge}>
+                <Image 
+                  src="/images/Stacked-Full-Color-on-Light.png" 
+                  alt="VA Community Care Network Provider"
+                  width={200}
+                  height={200}
+                  style={{ width: 'auto', height: '60px', borderRadius: '4px' }}
+                />
+              </div>
+
+              <div className={styles.trustBadge}>
+                <a 
+                  href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
+                  target="_blank" 
+                  rel="nofollow noopener noreferrer"
+                  style={{ display: 'block', height: '50px' }}
+                >
+                  <Image 
+                    src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
+                    alt="Colorado CareAssist BBB Business Review"
+                    width={293}
+                    height={61}
+                    style={{ border: 0, height: '100%', width: 'auto' }}
+                  />
+                </a>
+              </div>
+
               <div className={styles.trustItem}>
                 <Trustpilot />
               </div>
             </div>
-          </div>
-          
-          <div className={styles.heroBadgeLeft}>
-            <Image 
-              src="/images/Stacked-Full-Color-on-Light.png" 
-              alt="VA Community Care Network Provider"
-              width={200}
-              height={200}
-              style={{ width: '140px', height: 'auto', borderRadius: '8px' }}
-            />
-          </div>
-
-          <div className={styles.heroBadgeRight}>
-            <a 
-              href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-            >
-              <Image 
-                src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
-                alt="Colorado CareAssist BBB Business Review"
-                width={293}
-                height={61}
-                style={{ border: 0, height: '50px', width: 'auto' }}
-              />
-            </a>
           </div>
         </div>
       </section>
