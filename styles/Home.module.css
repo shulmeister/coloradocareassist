@@ -131,28 +131,31 @@
 /* Trust Wrapper for VA - Box - BBB layout */
 .trustWrapper {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: var(--s4);
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container);
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Trust Row - Properly Contained */
 .trustRow {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
-  padding: 1rem 2rem 0.75rem 2rem;
+  flex-wrap: nowrap;
+  padding: 1rem 1.5rem;
   background: rgba(250, 249, 245, 0.95);
   border-radius: 8px;
   border: 1px solid var(--color-olive);
-  max-width: 100%;
+  flex: 1;
+  white-space: nowrap;
 }
 
 .heroBadgeLeft {
@@ -184,7 +187,7 @@
 }
 
 .trustBadge img {
-  height: 50px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -598,6 +601,19 @@
 }
 
 /* Responsive - Mobile */
+@media (max-width: 1200px) {
+  .trustWrapper {
+    flex-direction: column;
+    gap: var(--s4);
+  }
+
+  .trustRow {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .mobileStickyBar {
     display: flex;
@@ -627,6 +643,7 @@
 
   .trustRow {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: var(--s4);
     padding: var(--s4);
