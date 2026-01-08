@@ -37,6 +37,9 @@ const nextConfig = {
         ]
       }
     ];
+  },
+  images: {
+    domains: ['seal-southerncolorado.bbb.org'],
   }
 };
 

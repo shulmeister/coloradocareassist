@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '@/styles/Page.module.css';
 
 export default function Veterans() {
@@ -18,12 +19,11 @@ export default function Veterans() {
             bottom: 0, 
             zIndex: 0 
           }}>
-            <img 
+            <Image 
               src="/images/veterans.jpg" 
               alt="Veteran with service dog" 
+              fill
               style={{ 
-                width: '100%', 
-                height: '100%', 
                 objectFit: 'cover', 
                 opacity: 0.25 
               }} 

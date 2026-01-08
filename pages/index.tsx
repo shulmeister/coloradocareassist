@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import Trustpilot from '@/components/integrations/Trustpilot';
 import styles from '@/styles/Home.module.css';
 
@@ -9,12 +10,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroImage}>
-          <img
+          <Image
             src="/images/hero.jpg"
             alt="Complete home care in Colorado"
             className={styles.heroImg}
-            loading="eager"
-            decoding="async"
+            fill
+            priority
+            style={{ objectFit: 'cover', objectPosition: 'center 35%' }}
+            sizes="100vw"
           />
         </div>
         <div className={styles.heroContainer}>
@@ -44,9 +47,11 @@ export default function Home() {
                   target="_blank" 
                   rel="nofollow noopener noreferrer"
                 >
-                  <img 
+                  <Image 
                     src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
                     alt="Colorado CareAssist BBB Business Review"
+                    width={293}
+                    height={61}
                     style={{ border: 0, height: '50px', width: 'auto' }}
                   />
                 </a>
@@ -235,10 +240,12 @@ export default function Home() {
               target="_blank" 
               rel="nofollow noopener noreferrer"
             >
-              <img 
+              <Image 
                 src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
                 alt="Colorado CareAssist BBB Business Review"
-                style={{ border: 0 }}
+                width={293}
+                height={61}
+                style={{ border: 0, maxWidth: '200px', height: 'auto' }}
               />
             </a>
           </div>
