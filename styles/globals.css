@@ -49,8 +49,9 @@
   --spacing-3xl: 6rem;
   
   /* Layout */
-  --container-max-width: 1200px;
-  --container-padding: 1.5rem;
+  --container-max-width: 1240px;
+  --container-padding: 2rem;
+  --container-padding-mobile: 1.25rem;
   --header-height: 80px;
   
   /* Shadows - Minimal, natural */
@@ -186,9 +187,13 @@ img {
 /* Responsive Typography */
 @media (max-width: 768px) {
   :root {
-    --font-size-base: 15px;
-    --container-padding: 1rem;
+    --font-size-base: 16px;
+    --container-padding: var(--container-padding-mobile);
     --header-height: 70px;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
   }
   
   h1 {
@@ -214,5 +219,17 @@ img {
 ::selection {
   background-color: var(--color-leaf-light);
   color: var(--color-brown);
+}
+
+/* Tawk Chat Widget - De-emphasize on mobile */
+@media (max-width: 768px) {
+  #tawk-bubble-container {
+    bottom: 60px !important;
+    right: 10px !important;
+  }
+  
+  iframe[title*="chat"] {
+    max-width: 280px !important;
+  }
 }
 

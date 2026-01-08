@@ -44,6 +44,55 @@ export default function Home() {
               <strong>Family-owned</strong> • Not a franchise • Colorado-based since 2012
             </p>
           </div>
+          <div className={styles.heroImage}>
+            <img 
+              src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=800&q=80" 
+              alt="Compassionate caregiver assisting senior at home"
+              className={styles.heroImg}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Marks Section */}
+      <section className={styles.trustMarks}>
+        <div className="container">
+          <div className={styles.trustGrid}>
+            <div className={styles.trustItem}>
+              <a 
+                href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer"
+                className={styles.bbbBadge}
+              >
+                <img 
+                  src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
+                  alt="Colorado CareAssist BBB Business Review" 
+                />
+              </a>
+            </div>
+            <div className={styles.trustItem}>
+              <div className={styles.trustIcon}>✓</div>
+              <div className={styles.trustText}>
+                <strong>Background Checked</strong>
+                <span>CBI, CAPS & DMV verified</span>
+              </div>
+            </div>
+            <div className={styles.trustItem}>
+              <div className={styles.trustIcon}>🛡️</div>
+              <div className={styles.trustText}>
+                <strong>Fully Insured & Bonded</strong>
+                <span>Millions in liability coverage</span>
+              </div>
+            </div>
+            <div className={styles.trustItem}>
+              <div className={styles.trustIcon}>🏔️</div>
+              <div className={styles.trustText}>
+                <strong>Colorado-Based Since 2012</strong>
+                <span>Family-owned, not a franchise</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -266,6 +315,17 @@ export default function Home() {
               <li>Multi-user access for family</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Image Band - Care in Action */}
+      <section className={styles.imageBand}>
+        <div className={styles.imageBandContainer}>
+          <img 
+            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80" 
+            alt="Caregiver providing compassionate assistance"
+            className={styles.imageBandImg}
+          />
         </div>
       </section>
 
