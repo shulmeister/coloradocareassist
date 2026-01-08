@@ -1,0 +1,11 @@
+Sample Pricing Guide (example ranges)
+
+Note: these are example ranges for private-pay, concierge-level clients. Final pricing will be quoted after assessment.
+
+- Hourly companion/ADL care: $45 - $95 per hour
+- Skilled caregiver (wound care, med administration): $65 - $130 per hour
+- Live-in / 24-hour: $250 - $500 per day
+- RN oversight / case management: $125 - $250 per hour
+- Minimums: 4 hours per visit typical for scheduled care
+
+Replace with your actual pricing guide PDF at /public/docs/sample_pricing.pdf

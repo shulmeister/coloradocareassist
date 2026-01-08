@@ -53,6 +53,9 @@ export default function Footer() {
               <li><Link href="/#how-it-works">How It Works</Link></li>
               <li><Link href="/careers">Careers</Link></li>
               <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/privacy">Privacy Policy</Link></li>
+              <li><Link href="/hipaa">HIPAA & Data Security</Link></li>
+              <li><Link href="/private-client">Private Client Concierge</Link></li>
             </ul>
             <h4 className={`${styles.columnHeading} ${styles.loginHeading}`}>Log In</h4>
             <ul className={styles.links}>

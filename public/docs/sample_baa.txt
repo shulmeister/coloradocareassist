@@ -1,0 +1,9 @@
+Sample Business Associate Agreement (BAA) (placeholder)
+
+This is a placeholder BAA. When a client or estate manager requests a signed BAA, provide an insurer/attorney-approved BAA. The BAA should cover:
+- Definitions of PHI and permitted uses
+- Safeguards & breach notification
+- Termination & return/destruction of PHI
+- Liability and indemnification
+
+For production use, upload an official PDF to /public/docs/sample_baa.pdf

@@ -1,0 +1,10 @@
+Certificate of Insurance (placeholder)
+
+This is a placeholder Certificate of Insurance (COI). Replace with a PDF from your insurance carrier showing:
+- Carrier name
+- Policy number
+- Effective and expiration dates
+- Coverage limits (e.g., $3,000,000 General Liability)
+- Named insured: Colorado CareAssist
+
+For production use, upload an official PDF to this path: /public/docs/coi.pdf

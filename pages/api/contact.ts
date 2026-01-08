@@ -1,7 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 const SibApiV3Sdk = require('sib-api-v3-sdk');
+import { captureException } from '@/lib/sentry';
 
-// Rate limiting (simple in-memory store - use Redis in production for multiple instances)
+// Rate limiting: attempt Redis-backed limiter when REDIS_URL is provided,
+// otherwise fall back to a simple in-memory store (single dyno only).
+let redisClient: any = null;
+try {
+  if (process.env.REDIS_URL) {
+    // Require dynamically so absence of package doesn't crash local dev
+    // Install `ioredis` in production environment (Heroku) for Redis support.
+    // If not available, we'll catch and keep redisClient null.
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const IORedis = require('ioredis');
+    redisClient = new IORedis(process.env.REDIS_URL);
+  }
+} catch (e) {
+  redisClient = null;
+}
+
+// In-memory fallback
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const RATE_LIMIT_MAX_REQUESTS = 3; // 3 requests per minute per IP
@@ -28,7 +45,24 @@ interface SuccessResponse {
 }
 
 // Rate limiting check
-function checkRateLimit(ip: string): boolean {
+async function checkRateLimit(ip: string): Promise<boolean> {
+  // Redis-backed rate limiting
+  try {
+    if (redisClient) {
+      const key = `rl:${ip}`;
+      // INCR and set expiry if first
+      const count = await redisClient.incr(key);
+      if (count === 1) {
+        await redisClient.pexpire(key, RATE_LIMIT_WINDOW);
+      }
+      return count <= RATE_LIMIT_MAX_REQUESTS;
+    }
+  } catch (err) {
+    // Redis error -> fall through to in-memory fallback
+    console.error('Redis rate limit error, falling back to memory limiter', err?.message || err);
+  }
+
+  // In-memory fallback (works only for single-process dev / small Heroku apps)
   const now = Date.now();
   const record = rateLimitMap.get(ip);
 
@@ -98,11 +132,17 @@ export default async function handler(
               'unknown';
 
   // Check rate limit
-  if (!checkRateLimit(ip)) {
-    return res.status(429).json({ 
-      error: 'Too many requests', 
-      details: 'Please wait a minute before submitting again' 
-    });
+  try {
+    const allowed = await checkRateLimit(ip);
+    if (!allowed) {
+      return res.status(429).json({ 
+        error: 'Too many requests', 
+        details: 'Please wait a minute before submitting again' 
+      });
+    }
+  } catch (err) {
+    // If rate limit check fails unexpectedly, log and allow (fail open)
+    console.error('Rate limit check failed:', err?.message || err);
   }
 
   // Validate environment variables
@@ -230,10 +270,12 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
 
   } catch (error: any) {
     console.error('Error sending email:', error);
+    captureException(error);
     
     // Log error details without exposing sensitive information
     if (error.response) {
       console.error('Brevo API error:', error.response.body);
+      try { captureException(error.response.body); } catch (e) { /* ignore */ }
     }
 
     return res.status(500).json({

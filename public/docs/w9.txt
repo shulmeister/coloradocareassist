@@ -1,0 +1,3 @@
+W-9 (placeholder)
+
+Provide a completed W-9 for vendor processing. For convenience, upload a redacted W-9 to /public/docs/w9.pdf when ready.

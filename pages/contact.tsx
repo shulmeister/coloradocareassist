@@ -135,12 +135,26 @@ export default function Contact() {
                     We received your request and will contact you shortly. 
                     A care manager will reach out within 24 hours.
                   </p>
-                  <button 
-                    onClick={() => setStatus('idle')} 
-                    className={styles.resetButton}
-                  >
-                    Submit Another Request
-                  </button>
+                  <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                    <button 
+                      onClick={() => setStatus('idle')} 
+                      className={styles.resetButton}
+                    >
+                      Submit Another Request
+                    </button>
+
+                    <a
+                      href="mailto:private@coloradocareassist.com?subject=Private%20Concierge%20Request"
+                      className={styles.resetButton}
+                      style={{ backgroundColor: '#7A9631', color: '#fff', textDecoration: 'none' }}
+                    >
+                      Request Concierge Callback
+                    </a>
+
+                    <a href="/private-client" className={styles.resetButton} style={{ textDecoration: 'none' }}>
+                      Learn About Private Concierge
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className={styles.form}>

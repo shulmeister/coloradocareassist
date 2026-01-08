@@ -1,0 +1,13 @@
+Sample Service Agreement (placeholder)
+
+This is an example service agreement for private-client review. Replace with a legally-reviewed contract.
+
+Sections to include in final agreement:
+- Parties and scope of services
+- Fees, billing, and payment terms
+- Minimums, cancellation, and termination
+- Confidentiality and data protection
+- Insurance and indemnity clauses
+- Signature lines for authorized representatives
+
+For production use, upload an official PDF to /public/docs/sample_service_agreement.pdf
