@@ -12,8 +12,10 @@
     "postinstall": "echo 'Dependencies installed successfully'"
   },
   "dependencies": {
+    "@ringcentral/sdk": "^5.0.6",
     "@sentry/node": "^7.63.0",
     "date-fns": "^4.1.0",
+    "dotenv": "^17.2.3",
     "gray-matter": "^4.0.3",
     "ioredis": "^5.3.2",
     "next": "^14.0.4",
