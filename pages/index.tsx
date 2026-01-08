@@ -255,7 +255,7 @@ export default function Home() {
                 alt="VA Community Care Network Provider"
                 width={200}
                 height={200}
-                style={{ width: 'auto', height: '60px', borderRadius: '4px' }}
+                style={{ width: 'auto', height: '75px', borderRadius: '4px' }}
               />
             </div>
 
