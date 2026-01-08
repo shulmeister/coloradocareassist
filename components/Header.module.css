@@ -1,9 +1,7 @@
-/* Two-Tier Header Structure */
+/* Two-Tier Header Structure - Sticky (in normal flow) */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
   background: var(--color-off-white);
   box-shadow: var(--shadow-sm);
@@ -18,9 +16,9 @@
 }
 
 .topBar .container {
-  max-width: var(--container-max-width);
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 var(--px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +26,7 @@
 
 .contactInfo {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--s4);
   align-items: center;
 }
 
@@ -72,12 +70,12 @@
 }
 
 .mainNav .container {
-  max-width: var(--container-max-width);
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 var(--px);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--s5);
 }
 
 .logo {
