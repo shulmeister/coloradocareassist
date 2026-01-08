@@ -127,18 +127,18 @@
 .secondaryCta {
   padding: 14px 32px;
   background-color: transparent;
-  color: var(--color-brown);
+  color: var(--color-leaf-dark);
   font-weight: 600;
   border-radius: 6px;
   transition: all 0.25s ease;
   text-decoration: none;
   display: inline-block;
-  border: 2px solid var(--color-olive);
+  border: 2px solid var(--color-leaf-dark);
   font-size: 1rem;
 }
 
 .secondaryCta:hover {
-  background-color: var(--color-olive);
+  background-color: var(--color-leaf-dark);
   color: var(--color-off-white);
 }
 
