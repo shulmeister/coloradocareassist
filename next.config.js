@@ -44,6 +44,8 @@ const nextConfig = {
   // },
   images: {
     domains: ['seal-southerncolorado.bbb.org'],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
   }
 };
 

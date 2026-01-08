@@ -218,6 +218,7 @@ export default function Home() {
             className={styles.heroImg}
             fill
             priority
+            quality={65}
             style={{ objectFit: 'cover', objectPosition: 'center 35%' }}
             sizes="100vw"
           />
