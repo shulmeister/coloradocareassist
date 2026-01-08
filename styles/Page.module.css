@@ -1,0 +1,659 @@
+/* Shared Page Styles */
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  color: white;
+  padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+  margin-top: calc(var(--header-height) * -1);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.section > p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.card {
+  background-color: white;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md);
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  position: relative;
+}
+
+.card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* Highlight Sections */
+.highlightSection {
+  background-color: var(--color-background-alt);
+  padding: var(--spacing-3xl) var(--container-padding);
+  margin: var(--spacing-3xl) calc(var(--container-padding) * -1);
+}
+
+.highlightSection h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.highlightSection > p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+/* Benefits / Features Lists */
+.benefitsList,
+.trainingList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.benefitItem,
+.trainingItem {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 2px solid var(--color-border);
+}
+
+.benefitItem strong,
+.trainingItem strong {
+  display: block;
+  font-size: 1.0625rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.benefitItem p,
+.trainingItem p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+.note {
+  background-color: white;
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  max-width: 800px;
+  margin: var(--spacing-xl) auto 0;
+}
+
+.note p {
+  margin: 0;
+}
+
+/* Features with Icons */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.feature {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+.featureIcon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.feature h3 {
+  font-size: 1.0625rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* Stages */
+.stages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.stage {
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.stage h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.stage p {
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* Why List */
+.whyList {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto 0;
+  list-style: none;
+  padding: 0;
+}
+
+.whyList li {
+  padding: var(--spacing-md) 0 var(--spacing-md) var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  font-size: 1.0625rem;
+}
+
+.whyList li:last-child {
+  border-bottom: none;
+}
+
+.whyList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Differentiators */
+.differentiators {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.differentiator h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary);
+}
+
+.differentiator p {
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* Philosophy */
+.philosophy {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.philosophyItem {
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+}
+
+.philosophyItem h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.philosophyItem p {
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* Service Areas */
+.serviceAreas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.serviceArea {
+  background-color: var(--color-background-alt);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.serviceArea h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.serviceArea p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.areaPhone {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.areaPhone:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Commitment List */
+.commitmentList {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto 0;
+  list-style: none;
+  padding: 0;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 2px solid var(--color-border);
+}
+
+.commitmentList li {
+  padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
+  position: relative;
+  font-size: 1rem;
+}
+
+.commitmentList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* Benefits Grid (Careers) */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.benefit {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 2px solid var(--color-border);
+  text-align: center;
+}
+
+.benefit h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.benefit p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* Positions */
+.positions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.position {
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 2px solid var(--color-border);
+}
+
+.position h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.position > p {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.9375rem;
+}
+
+.position ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.position li {
+  padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md);
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  position: relative;
+}
+
+.position li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* Requirements List */
+.requirementsList {
+  max-width: 800px;
+  margin: var(--spacing-lg) auto 0;
+  padding-left: var(--spacing-xl);
+}
+
+.requirementsList li {
+  padding: var(--spacing-xs) 0;
+  color: var(--color-text);
+}
+
+/* Training Program */
+.trainingProgram {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  max-width: 900px;
+  margin: var(--spacing-xl) auto 0;
+}
+
+.trainingModule {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 2px solid var(--color-border);
+}
+
+.trainingModule strong {
+  display: block;
+  font-size: 1.0625rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.trainingModule p {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  color: white;
+  padding: var(--spacing-3xl) var(--container-padding);
+  margin: var(--spacing-3xl) calc(var(--container-padding) * -1) 0;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.ctaSection > p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  padding: 1rem 2rem;
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primaryButton:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.secondaryButton,
+.phoneButton {
+  padding: 1rem 2rem;
+  background-color: white;
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.secondaryButton:hover,
+.phoneButton:hover {
+  background-color: #f9fafb;
+  transform: translateY(-2px);
+  color: var(--color-primary-dark);
+}
+
+.ctaNote {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin: var(--spacing-md) 0 0;
+}
+
+/* Application Info */
+.applicationInfo {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+.applicationInfo h3 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.applicationInfo p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-md);
+}
+
+.applicationEmail {
+  font-size: 1.125rem;
+  margin: var(--spacing-md) 0;
+}
+
+.applicationEmail a {
+  color: white;
+  text-decoration: underline;
+}
+
+.applicationPhones {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .grid,
+  .benefitsList,
+  .trainingList,
+  .features,
+  .differentiators,
+  .philosophy,
+  .serviceAreas,
+  .benefits,
+  .positions,
+  .trainingProgram {
+    grid-template-columns: 1fr;
+  }
+  
+  .stages {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.0625rem;
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  
+  .ctaSection h2 {
+    font-size: 2rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .primaryButton,
+  .secondaryButton,
+  .phoneButton {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .applicationPhones {
+    flex-direction: column;
+  }
+}
+

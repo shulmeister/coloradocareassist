@@ -1,0 +1,45 @@
+.widget {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.fallback {
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  border: 2px solid var(--color-border);
+}
+
+.fallbackContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.fallbackContent p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.0625rem;
+}
+
+.fallbackButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #00b67a;
+  color: white;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.fallbackButton:hover {
+  background-color: #00995f;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: white;
+}
+

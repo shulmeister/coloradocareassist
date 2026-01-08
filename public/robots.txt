@@ -1,0 +1,7 @@
+# robots.txt for Colorado CareAssist
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://coloradocareassist.com/sitemap.xml
+
