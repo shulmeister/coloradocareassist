@@ -328,11 +328,18 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
         const phoneNumbersResponse = await platform.get('/restapi/v1.0/account/~/extension/~/phone-number');
         const phoneNumbers = await phoneNumbersResponse.json();
         
+        console.log(`Found ${phoneNumbers.records?.length || 0} phone numbers for extension.`);
+
         const validSender = phoneNumbers.records.find((record: any) => 
           record.features && record.features.includes('SmsSender')
         );
 
         if (!validSender) {
+          console.error('Available numbers:', JSON.stringify(phoneNumbers.records.map((r: any) => ({ 
+            phoneNumber: r.phoneNumber, 
+            features: r.features,
+            usageType: r.usageType
+          }))));
           throw new Error('No SMS-capable phone number found for this extension.');
         }
 
@@ -349,6 +356,15 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
         console.log('RingCentral SMS sent. Status:', data.messageStatus);
       } catch (rcError: any) {
         console.error('Failed to send RingCentral SMS:', rcError?.message || rcError);
+        // Log detailed API error if available
+        if (rcError.response) {
+            try {
+                const errorBody = await rcError.response.json();
+                console.error('RingCentral API Error Details:', JSON.stringify(errorBody));
+            } catch (e) {
+                console.error('Could not parse RC error body');
+            }
+        }
       }
     } else {
         console.log('Skipping SMS notification: Missing RingCentral environment variables');
