@@ -157,6 +157,17 @@
   margin-top: var(--s4);
 }
 
+.heroBadge {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.heroBadge img {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
 .trustBadge {
   flex-shrink: 0;
   display: flex;
@@ -577,6 +588,15 @@
     justify-content: center;
     gap: var(--s4);
     padding: var(--s4);
+  }
+
+  .heroBadge {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: var(--s4);
+    display: flex;
+    justify-content: center;
   }
 
   .trustItem {

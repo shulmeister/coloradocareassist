@@ -44,22 +44,6 @@ export default function Home() {
             </Link>
             {/* Trust Row */}
             <div className={styles.trustRow}>
-              <div className={styles.trustBadge}>
-                <a 
-                  href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
-                  target="_blank" 
-                  rel="nofollow noopener noreferrer"
-                >
-                  <Image 
-                    src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
-                    alt="Colorado CareAssist BBB Business Review"
-                    width={293}
-                    height={61}
-                    style={{ border: 0, height: '50px', width: 'auto' }}
-                  />
-                </a>
-              </div>
-              
               <div className={styles.trustItem}>
                 <div className={styles.trustIcon}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -93,6 +77,21 @@ export default function Home() {
                 <Trustpilot />
               </div>
             </div>
+          </div>
+          <div className={styles.heroBadge}>
+            <a 
+              href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+            >
+              <Image 
+                src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
+                alt="Colorado CareAssist BBB Business Review"
+                width={293}
+                height={61}
+                style={{ border: 0, height: '50px', width: 'auto' }}
+              />
+            </a>
           </div>
         </div>
       </section>
