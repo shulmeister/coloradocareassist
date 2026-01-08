@@ -46,6 +46,30 @@ export default function Dashboard() {
               <p style={{ margin: 0, fontSize: '0.9rem' }}>See recent leads from Brevo.</p>
             </div>
           </Link>
+
+          <div onClick={async () => {
+            if(!confirm('This will create a new List and 3 Email Templates in your Brevo account. Continue?')) return;
+            const btn = document.getElementById('setup-btn');
+            if(btn) btn.innerText = 'Installing...';
+            try {
+              const res = await fetch('/api/admin/setup-campaign');
+              const data = await res.json();
+              alert(JSON.stringify(data, null, 2));
+            } catch(e) { alert('Error'); }
+            if(btn) btn.innerText = '🚀 Setup Partner Drip';
+          }} style={{ textDecoration: 'none' }}>
+            <div style={{ 
+              padding: '20px', 
+              background: '#fff7ed', 
+              border: '1px solid #fdba74', 
+              borderRadius: '8px', 
+              color: '#c2410c',
+              cursor: 'pointer'
+            }}>
+              <h3 id="setup-btn" style={{ margin: '0 0 10px 0' }}>🚀 Setup Partner Drip</h3>
+              <p style={{ margin: 0, fontSize: '0.9rem' }}>One-click install: Wealth Manager email campaign.</p>
+            </div>
+          </div>
         </div>
       </div>
     </AdminLayout>
