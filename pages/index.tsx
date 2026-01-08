@@ -1,11 +1,212 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import Trustpilot from '@/components/integrations/Trustpilot';
 import FAQ from '@/components/FAQ';
 import styles from '@/styles/Home.module.css';
 
+interface Service {
+  id: string;
+  icon: JSX.Element;
+  title: string;
+  summary: string;
+  expanded: {
+    sections?: {
+      heading?: string;
+      items: string[];
+    }[];
+    footer?: string;
+  };
+}
+
+const services: Service[] = [
+  {
+    id: 'adl',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+    ),
+    title: 'ADL Support',
+    summary: 'Bathing, dressing, mobility, toileting, transfers, medication reminders.',
+    expanded: {
+      sections: [
+        {
+          heading: 'Basic ADLs',
+          items: [
+            'Toileting and continence support',
+            'Transfers and mobility assistance',
+            'Bathing, showering, grooming, and hygiene',
+            'Dressing and personal care'
+          ]
+        },
+        {
+          heading: 'Intermediate ADLs',
+          items: [
+            'Protective supervision and safety oversight',
+            'Medication reminders and routine adherence',
+            'Mobility monitoring and fall prevention'
+          ]
+        }
+      ],
+      footer: 'Care is matched to functional ability and adjusted as needs change.'
+    }
+  },
+  {
+    id: 'housekeeping',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    ),
+    title: 'Housekeeping',
+    summary: 'Laundry, vacuuming, mopping, tidying. Maintain a clean, organized home.',
+    expanded: {
+      sections: [
+        {
+          items: [
+            'Light housekeeping and home upkeep',
+            'Laundry, linens, and organization',
+            'Kitchen and bathroom maintenance',
+            'Safety-focused tidying to reduce fall risk'
+          ]
+        }
+      ],
+      footer: 'Services are performed in support of independent living — not as standalone cleaning.'
+    }
+  },
+  {
+    id: 'mealprep',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+        <line x1="6" y1="1" x2="6" y2="4"/>
+        <line x1="10" y1="1" x2="10" y2="4"/>
+        <line x1="14" y1="1" x2="14" y2="4"/>
+      </svg>
+    ),
+    title: 'Meal Preparation',
+    summary: 'Nutritious meals prepared in your home. Dietary needs accommodated.',
+    expanded: {
+      sections: [
+        {
+          items: [
+            'Meal planning and in-home preparation',
+            'Dietary and medical considerations respected',
+            'Hydration and nutrition monitoring',
+            'Assistance with feeding when required'
+          ]
+        }
+      ],
+      footer: 'Supports both physical health and daily routine stability.'
+    }
+  },
+  {
+    id: 'errands',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    ),
+    title: 'Errands & Transportation',
+    summary: 'Appointments, groceries, pharmacy runs. Reliable transportation when needed.',
+    expanded: {
+      sections: [
+        {
+          items: [
+            'Transportation to medical and personal appointments',
+            'Grocery and pharmacy coordination',
+            'Accompaniment and advocacy during outings',
+            'Errands completed with safety and accountability'
+          ]
+        }
+      ],
+      footer: 'Designed to reduce isolation while maintaining independence.'
+    }
+  },
+  {
+    id: 'handyman',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    ),
+    title: 'Handyman Services',
+    summary: 'Light home maintenance and repairs. Handymen on staff, not contractors.',
+    expanded: {
+      sections: [
+        {
+          items: [
+            'Minor home maintenance and safety repairs',
+            'Grab bars, lighting, and fall-risk mitigation',
+            'Trusted in-house staff — not third-party contractors'
+          ]
+        }
+      ],
+      footer: 'Focused on home safety, not remodeling or construction.'
+    }
+  },
+  {
+    id: 'petcare',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M10.5 3.5c0 1.5-2 3-2 4.5 0 2.5 2 4 4 4s4-1.5 4-4c0-1.5-2-3-2-4.5"/>
+        <path d="M12.5 12v8.5"/>
+        <path d="M8 16l4.5 4.5L17 16"/>
+      </svg>
+    ),
+    title: 'Pet Care',
+    summary: 'Feeding, walks, companionship for your pets. Part of complete home support.',
+    expanded: {
+      sections: [
+        {
+          items: [
+            'Feeding, walking, and basic pet care',
+            'Support for routines clients may struggle to manage',
+            'Companionship that maintains normal daily life'
+          ]
+        }
+      ],
+      footer: 'Because continuity matters — even for pets.'
+    }
+  },
+  {
+    id: 'concierge',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+        <path d="M9 10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1z"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
+    title: 'Private Client Concierge',
+    summary: 'Dedicated management for estate planners, fiduciaries, and high-net-worth families.',
+    expanded: {
+      sections: [
+        {
+          items: [
+            'Dedicated account and care management',
+            'Priority scheduling and caregiver continuity',
+            'Direct coordination with POAs, trustees, and attorneys',
+            'Documentation suitable for fiduciary oversight'
+          ]
+        }
+      ],
+      footer: 'Built for complex care environments where accountability matters.'
+    }
+  }
+];
+
 export default function Home() {
+  const [activeService, setActiveService] = useState<string | null>(null);
+
+  const toggleService = (id: string) => {
+    setActiveService(activeService === id ? null : id);
+  };
   return (
     <Layout>
       {/* Hero Section */}
@@ -125,85 +326,46 @@ export default function Home() {
           </div>
           
           <div className={styles.servicesGrid}>
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
+            {services.map((service) => (
+              <div 
+                key={service.id}
+                className={`${styles.serviceCard} ${activeService === service.id ? styles.expanded : ''}`}
+                onClick={() => toggleService(service.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    toggleService(service.id);
+                    e.preventDefault();
+                  }
+                }}
+                aria-expanded={activeService === service.id}
+              >
+                <div className={styles.serviceContent}>
+                  <div className={styles.serviceIcon}>
+                    {service.icon}
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.summary}</p>
+                  
+                  <div className={styles.serviceExpanded}>
+                    {service.expanded.sections?.map((section, idx) => (
+                      <div key={idx}>
+                        {section.heading && <h4>{section.heading}</h4>}
+                        <ul>
+                          {section.items.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    {service.expanded.footer && (
+                      <p className={styles.serviceFooter}>{service.expanded.footer}</p>
+                    )}
+                  </div>
+                </div>
               </div>
-              <h3>ADL Support</h3>
-              <p>Bathing, dressing, mobility, toileting, transfers, medication reminders.</p>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                  <polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
-              </div>
-              <h3>Housekeeping</h3>
-              <p>Laundry, vacuuming, mopping, tidying. Maintain a clean, organized home.</p>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                  <line x1="6" y1="1" x2="6" y2="4"/>
-                  <line x1="10" y1="1" x2="10" y2="4"/>
-                  <line x1="14" y1="1" x2="14" y2="4"/>
-                </svg>
-              </div>
-              <h3>Meal Prep</h3>
-              <p>Nutritious meals prepared in your home. Dietary needs accommodated.</p>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <h3>Errands & Transportation</h3>
-              <p>Appointments, groceries, pharmacy runs. Reliable transportation when needed.</p>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                </svg>
-              </div>
-              <h3>Handyman Services</h3>
-              <p>Light home maintenance and repairs. Handymen on staff, not contractors.</p>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M10.5 3.5c0 1.5-2 3-2 4.5 0 2.5 2 4 4 4s4-1.5 4-4c0-1.5-2-3-2-4.5"/>
-                  <path d="M12.5 12v8.5"/>
-                  <path d="M8 16l4.5 4.5L17 16"/>
-                </svg>
-              </div>
-              <h3>Pet Care</h3>
-              <p>Feeding, walks, companionship for your pets. Part of complete home support.</p>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
-                  <path d="M9 10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1z"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-              <h3>Private Concierge</h3>
-              <p>Dedicated management for estate planners, fiduciaries, and high-net-worth families.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>

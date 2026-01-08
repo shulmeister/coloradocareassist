@@ -250,45 +250,124 @@
   margin: 0 auto;
 }
 
+/* Service Card Expansion */
 .serviceCard {
   background: var(--color-background);
   padding: 32px 24px;
   border: 1px solid var(--color-olive);
   border-radius: 6px;
-  transition: all 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
 }
 
-.serviceCard:last-child {
-  grid-column: 2;
-}
-
-@media (max-width: 1024px) {
-  .servicesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .serviceCard:last-child {
-    grid-column: span 2;
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .serviceCard:last-child {
-    grid-column: auto;
-    max-width: none;
-  }
-}
-
-.serviceCard:hover {
+.serviceCard:hover,
+.serviceCard.expanded {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(92, 46, 12, 0.1);
+  box-shadow: 0 12px 24px rgba(92, 46, 12, 0.15);
+  border-color: var(--color-leaf-dark);
+  background: white;
+}
+
+.serviceContent {
+  flex: 1;
+}
+
+.serviceExpanded {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0;
+}
+
+/* Hover State (Desktop) */
+@media (hover: hover) {
+  .serviceCard:hover .serviceExpanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+}
+
+/* Expanded State (Mobile/Click) */
+.serviceCard.expanded .serviceExpanded {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.serviceExpanded h4 {
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  color: var(--color-leaf-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-olive);
+  padding-bottom: 0.25rem;
+  margin-top: 1rem;
+}
+
+.serviceExpanded h4:first-child {
+  margin-top: 0;
+}
+
+.serviceExpanded ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.serviceExpanded li {
+  padding: 4px 0 4px 12px;
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--color-charcoal);
+  line-height: 1.5;
+}
+
+.serviceExpanded li::before {
+  content: "•";
+  color: var(--color-leaf-dark);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.serviceExpanded p {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-charcoal);
+  border-top: 1px solid var(--color-background-alt);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Add an indicator for interaction */
+.serviceCard::after {
+  content: '+';
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: var(--color-olive);
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (hover: hover) {
+  .serviceCard:hover::after {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+}
+
+.serviceCard.expanded::after {
+  opacity: 0;
 }
 
 .serviceIcon {
