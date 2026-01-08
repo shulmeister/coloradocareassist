@@ -25,7 +25,8 @@
     "react-dom": "^18.2.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "sib-api-v3-sdk": "^8.5.0"
+    "sib-api-v3-sdk": "^8.5.0",
+    "swr": "^2.3.8"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
