@@ -6,6 +6,7 @@ import styles from './Header.module.css';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
   const router = useRouter();
   const isHomePage = router.pathname === '/';
 
@@ -42,7 +43,16 @@ export default function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoText}>Colorado CareAssist</span>
+          {!logoFailed ? (
+            <img
+              src="/cca-logo.png"
+              alt="Colorado CareAssist"
+              className={styles.logoImage}
+              onError={() => setLogoFailed(true)}
+            />
+          ) : (
+            <span className={styles.logoText}>Colorado CareAssist</span>
+          )}
         </Link>
 
         {/* Desktop Navigation */}

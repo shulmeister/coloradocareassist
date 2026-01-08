@@ -36,6 +36,13 @@
   letter-spacing: -0.01em;
 }
 
+.logoImage {
+  height: 42px;
+  width: auto;
+  display: block;
+  padding: 0.5rem; /* calm breathing room */
+}
+
 .logoText {
   display: inline-block;
 }
@@ -258,16 +265,23 @@
 
 /* Tablet and Mobile */
 @media (max-width: 1024px) {
+  .nav,
+  .ctaButton,
+  .loginLinks {
+    display: none;
+  }
+
   .phones {
     display: none;
   }
-  
-  .nav {
-    gap: var(--spacing-sm);
+
+  .mobileMenuButton {
+    display: block;
+    margin-left: auto;
   }
-  
-  .navLink {
-    font-size: 0.875rem;
+
+  .mobileMenu {
+    display: block;
   }
 }
 

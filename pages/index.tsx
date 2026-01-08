@@ -46,8 +46,8 @@ export default function Home() {
           </div>
           <div className={styles.heroImage}>
             <img 
-              src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=800&q=80" 
-              alt="Compassionate caregiver assisting senior at home"
+              src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80&auto=format&fit=crop"
+              alt="Warm, calm home setting in Colorado"
               className={styles.heroImg}
             />
           </div>
@@ -322,8 +322,8 @@ export default function Home() {
       <section className={styles.imageBand}>
         <div className={styles.imageBandContainer}>
           <img 
-            src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1200&q=80" 
-            alt="Caregiver providing compassionate assistance"
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80&auto=format&fit=crop"
+            alt="Colorado landscape, calm and natural"
             className={styles.imageBandImg}
           />
         </div>
