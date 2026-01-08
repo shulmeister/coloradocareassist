@@ -111,9 +111,7 @@ export default function Header() {
                 <button onClick={() => scrollToSection('standards')} className={styles.navLink}>
                   Standards
                 </button>
-                <button onClick={() => scrollToSection('reviews')} className={styles.navLink}>
-                  Reviews
-                </button>
+                <Link href="/private-client" className={styles.navLink}>Concierge</Link>
                 <button onClick={() => scrollToSection('faq')} className={styles.navLink}>
                   FAQ
                 </button>
@@ -123,7 +121,7 @@ export default function Header() {
                 <Link href="/#services" className={styles.navLink}>Services</Link>
                 <Link href="/#how-it-works" className={styles.navLink}>How It Works</Link>
                 <Link href="/#standards" className={styles.navLink}>Standards</Link>
-                <Link href="/#reviews" className={styles.navLink}>Reviews</Link>
+                <Link href="/private-client" className={styles.navLink}>Concierge</Link>
                 <Link href="/#faq" className={styles.navLink}>FAQ</Link>
               </>
             )}
@@ -168,9 +166,7 @@ export default function Header() {
               <button onClick={() => scrollToSection('standards')} className={styles.mobileNavLink}>
                 Standards
               </button>
-              <button onClick={() => scrollToSection('reviews')} className={styles.mobileNavLink}>
-                Reviews
-              </button>
+              <Link href="/private-client" className={styles.mobileNavLink}>Concierge</Link>
               <button onClick={() => scrollToSection('faq')} className={styles.mobileNavLink}>
                 FAQ
               </button>
@@ -180,7 +176,7 @@ export default function Header() {
               <Link href="/#services" className={styles.mobileNavLink}>Services</Link>
               <Link href="/#how-it-works" className={styles.mobileNavLink}>How It Works</Link>
               <Link href="/#standards" className={styles.mobileNavLink}>Standards</Link>
-              <Link href="/#reviews" className={styles.mobileNavLink}>Reviews</Link>
+              <Link href="/private-client" className={styles.mobileNavLink}>Concierge</Link>
               <Link href="/#faq" className={styles.mobileNavLink}>FAQ</Link>
             </>
           )}

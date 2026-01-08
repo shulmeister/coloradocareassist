@@ -39,6 +39,9 @@ export default function Home() {
                 Contact Us
               </Link>
             </div>
+            <Link href="/private-client" className={styles.heroConciergeLink}>
+              Looking for Private Client Concierge?
+            </Link>
             {/* Trust Row */}
             <div className={styles.trustRow}>
               <div className={styles.trustBadge}>
@@ -172,6 +175,18 @@ export default function Home() {
               <h3>Pet Care</h3>
               <p>Feeding, walks, companionship for your pets. Part of complete home support.</p>
             </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/>
+                  <path d="M9 10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1z"/>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <h3>Private Concierge</h3>
+              <p>Dedicated management for estate planners, fiduciaries, and high-net-worth families.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -216,6 +231,7 @@ export default function Home() {
                 <li>Schedule access for POA/estate managers</li>
                 <li>Billing transparency</li>
                 <li>Direct communication with care team</li>
+                <li>Private client concierge options</li>
                 <li>No surprises, no hidden fees</li>
               </ul>
             </div>
@@ -353,6 +369,11 @@ export default function Home() {
             <div className={styles.faqItem}>
               <h3>Do you work with veterans?</h3>
               <p>Yes. Veteran care training is standard. We assist with VA benefits navigation when applicable.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>Do you offer private client services?</h3>
+              <p>Yes. Our <Link href="/private-client">Private Client Concierge</Link> offers dedicated account management, priority scheduling, and direct coordination with estate planners and fiduciaries.</p>
             </div>
 
             <div className={styles.faqItem}>
