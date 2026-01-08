@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import * as brevo from '@brevo/api';
+const SibApiV3Sdk = require('sib-api-v3-sdk');
 
 // Rate limiting (simple in-memory store - use Redis in production for multiple instances)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -129,8 +129,11 @@ export default async function handler(
 
   try {
     // Initialize Brevo API client
-    const apiInstance = new brevo.TransactionalEmailsApi();
-    apiInstance.setApiKey(brevo.TransactionalEmailsApiApiKeys.apiKey, brevoApiKey);
+    const defaultClient = SibApiV3Sdk.ApiClient.instance;
+    const apiKey = defaultClient.authentications['api-key'];
+    apiKey.apiKey = brevoApiKey;
+    
+    const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
     // Prepare email content
     const emailHtml = `
@@ -208,13 +211,14 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
     `;
 
     // Send email via Brevo
-    const sendSmtpEmail = new brevo.SendSmtpEmail();
-    sendSmtpEmail.sender = { email: fromEmail, name: fromName };
-    sendSmtpEmail.to = [{ email: toEmail, name: 'Colorado CareAssist' }];
-    sendSmtpEmail.replyTo = { email: formData.email, name: formData.name };
-    sendSmtpEmail.subject = `New Care Plan Request from ${formData.name}`;
-    sendSmtpEmail.htmlContent = emailHtml;
-    sendSmtpEmail.textContent = emailText;
+    const sendSmtpEmail = {
+      sender: { email: fromEmail, name: fromName },
+      to: [{ email: toEmail, name: 'Colorado CareAssist' }],
+      replyTo: { email: formData.email, name: formData.name },
+      subject: `New Care Plan Request from ${formData.name}`,
+      htmlContent: emailHtml,
+      textContent: emailText
+    };
 
     await apiInstance.sendTransacEmail(sendSmtpEmail);
 
