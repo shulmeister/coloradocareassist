@@ -309,12 +309,15 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
     const rcTo = process.env.RINGCENTRAL_TO_NUMBER;
 
     if (rcClientId && rcClientSecret && rcJwt && rcFrom && rcTo) {
+      // Remove trailing slash if present to avoid AGW-404 errors
+      const serverUrl = (process.env.RINGCENTRAL_SERVER || 'https://platform.ringcentral.com').replace(/\/$/, '');
+      
       console.log('Sending SMS notification via RingCentral...');
-      console.log(`RC Server: ${rcServer}`);
+      console.log(`RC Server: ${serverUrl}`);
       try {
         const RingCentral = require('@ringcentral/sdk').SDK;
         const rcsdk = new RingCentral({
-          server: rcServer,
+          server: serverUrl,
           clientId: rcClientId,
           clientSecret: rcClientSecret
         });
