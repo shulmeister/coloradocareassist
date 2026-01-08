@@ -262,6 +262,42 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
 
     await apiInstance.sendTransacEmail(sendSmtpEmail);
 
+    // Send Auto-Reply to the user
+    try {
+      const autoReplyHtml = `
+        <html>
+          <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+            <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+              <h2 style="color: #2563eb;">We received your request</h2>
+              <p>Dear ${formData.name},</p>
+              <p>Thank you for contacting Colorado CareAssist. We have received your request for a care plan.</p>
+              <p>One of our care managers will review your information and contact you shortly (usually within 24 hours) to discuss your needs.</p>
+              <div style="background-color: #f3f4f6; padding: 15px; border-radius: 6px; margin: 20px 0;">
+                <p style="margin: 0;"><strong>If this is an urgent matter, please call us directly:</strong></p>
+                <p style="margin: 10px 0 0 0; font-size: 18px; font-weight: bold;">(303) 757-1777</p>
+              </div>
+              <p>Best regards,</p>
+              <p><strong>The Colorado CareAssist Team</strong><br>
+              <a href="https://coloradocareassist.com" style="color: #2563eb; text-decoration: none;">coloradocareassist.com</a></p>
+            </div>
+          </body>
+        </html>
+      `;
+
+      const sendAutoReply = {
+        sender: { email: fromEmail, name: fromName },
+        to: [{ email: formData.email, name: formData.name }],
+        subject: "We received your request - Colorado CareAssist",
+        htmlContent: autoReplyHtml,
+        textContent: `Dear ${formData.name},\n\nThank you for contacting Colorado CareAssist. We have received your request for a care plan.\n\nOne of our care managers will review your information and contact you shortly.\n\nIf this is an urgent matter, please call us directly at (303) 757-1777.\n\nBest regards,\nThe Colorado CareAssist Team`
+      };
+
+      await apiInstance.sendTransacEmail(sendAutoReply);
+    } catch (autoReplyError) {
+      console.error('Failed to send auto-reply:', autoReplyError);
+      // Don't fail the request if auto-reply fails, as the lead was already captured
+    }
+
     // Success response
     return res.status(200).json({
       success: true,
