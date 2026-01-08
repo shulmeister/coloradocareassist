@@ -124,21 +124,25 @@
   color: var(--color-leaf-dark);
 }
 
-.ctaButton {
-  background: var(--color-leaf-dark);
-  color: var(--color-off-white);
-  padding: 0.625rem 1.5rem;
-  border-radius: var(--radius-md);
+/* Desktop Phone Numbers */
+.desktopPhones {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.phoneLink {
+  color: var(--color-charcoal);
   text-decoration: none;
-  font-weight: 600;
   font-size: 0.9375rem;
-  transition: all var(--transition-fast);
+  font-weight: 600;
+  transition: color var(--transition-fast);
   white-space: nowrap;
 }
 
-.ctaButton:hover {
-  background: var(--color-brown);
-  transform: translateY(-1px);
+.phoneLink:hover {
+  color: var(--color-leaf-dark);
 }
 
 /* Mobile Menu Button */
@@ -249,7 +253,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .nav,
-  .ctaButton {
+  .desktopPhones {
     display: none;
   }
 

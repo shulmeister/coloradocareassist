@@ -27,7 +27,7 @@ export default function Header() {
     
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 120; // Updated for two-tier header
+      const headerOffset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -77,7 +77,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Nav - Logo + Links + CTA */}
+      {/* Main Nav - Logo + Links */}
       <div className={styles.mainNav}>
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
@@ -98,28 +98,45 @@ export default function Header() {
             {isHomePage ? (
               <>
                 <button onClick={() => scrollToSection('services')} className={styles.navLink}>
-                  What Do We Do?
+                  Services
                 </button>
                 <button onClick={() => scrollToSection('how-it-works')} className={styles.navLink}>
-                  How Do We Do It?
+                  How It Works
+                </button>
+                <button onClick={() => scrollToSection('standards')} className={styles.navLink}>
+                  Standards
+                </button>
+                <button onClick={() => scrollToSection('reviews')} className={styles.navLink}>
+                  Reviews
+                </button>
+                <button onClick={() => scrollToSection('faq')} className={styles.navLink}>
+                  FAQ
                 </button>
               </>
             ) : (
               <>
-                <Link href="/#services" className={styles.navLink}>What Do We Do?</Link>
-                <Link href="/#how-it-works" className={styles.navLink}>How Do We Do It?</Link>
+                <Link href="/#services" className={styles.navLink}>Services</Link>
+                <Link href="/#how-it-works" className={styles.navLink}>How It Works</Link>
+                <Link href="/#standards" className={styles.navLink}>Standards</Link>
+                <Link href="/#reviews" className={styles.navLink}>Reviews</Link>
+                <Link href="/#faq" className={styles.navLink}>FAQ</Link>
               </>
             )}
             
-            <Link href="/about" className={styles.navLink}>Financing Care</Link>
+            <Link href="/veterans" className={styles.navLink}>Veterans</Link>
+            <Link href="/dementia-care" className={styles.navLink}>Dementia Care</Link>
             <Link href="/careers" className={styles.navLink}>Careers</Link>
-            <Link href="/contact" className={styles.navLink}>Contact Us</Link>
           </nav>
 
-          {/* CTA Button */}
-          <Link href="/contact" className={styles.ctaButton}>
-            Support
-          </Link>
+          {/* Desktop Phone Numbers */}
+          <div className={styles.desktopPhones}>
+            <a href="tel:+13037571777" className={styles.phoneLink}>
+              (303) 757-1777
+            </a>
+            <a href="tel:+17194283999" className={styles.phoneLink}>
+              (719) 428-3999
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button 
@@ -138,38 +155,46 @@ export default function Header() {
           {isHomePage ? (
             <>
               <button onClick={() => scrollToSection('services')} className={styles.mobileNavLink}>
-                What Do We Do?
+                Services
               </button>
               <button onClick={() => scrollToSection('how-it-works')} className={styles.mobileNavLink}>
-                How Do We Do It?
+                How It Works
+              </button>
+              <button onClick={() => scrollToSection('standards')} className={styles.mobileNavLink}>
+                Standards
+              </button>
+              <button onClick={() => scrollToSection('reviews')} className={styles.mobileNavLink}>
+                Reviews
+              </button>
+              <button onClick={() => scrollToSection('faq')} className={styles.mobileNavLink}>
+                FAQ
               </button>
             </>
           ) : (
             <>
-              <Link href="/#services" className={styles.mobileNavLink}>What Do We Do?</Link>
-              <Link href="/#how-it-works" className={styles.mobileNavLink}>How Do We Do It?</Link>
+              <Link href="/#services" className={styles.mobileNavLink}>Services</Link>
+              <Link href="/#how-it-works" className={styles.mobileNavLink}>How It Works</Link>
+              <Link href="/#standards" className={styles.mobileNavLink}>Standards</Link>
+              <Link href="/#reviews" className={styles.mobileNavLink}>Reviews</Link>
+              <Link href="/#faq" className={styles.mobileNavLink}>FAQ</Link>
             </>
           )}
           
-          <Link href="/about" className={styles.mobileNavLink}>Financing Care</Link>
+          <Link href="/veterans" className={styles.mobileNavLink}>Veterans</Link>
+          <Link href="/dementia-care" className={styles.mobileNavLink}>Dementia Care</Link>
           <Link href="/careers" className={styles.mobileNavLink}>Careers</Link>
-          <Link href="/contact" className={styles.mobileNavLink}>Contact Us</Link>
           
           <div className={styles.mobilePhones}>
             <a href="tel:+13037571777" className={styles.mobilePhone}>
-              (303) 757-1777
+              Denver/Boulder: (303) 757-1777
             </a>
             <a href="tel:+17194283999" className={styles.mobilePhone}>
-              (719) 428-3999
+              Colorado Springs/Pueblo: (719) 428-3999
             </a>
             <a href="mailto:care@coloradocareassist.com" className={styles.mobilePhone}>
               care@coloradocareassist.com
             </a>
           </div>
-          
-          <Link href="/contact" className={styles.mobileCtaButton}>
-            Support
-          </Link>
 
           <div className={styles.mobileLoginLinks}>
             <a 

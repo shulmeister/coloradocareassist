@@ -6,12 +6,12 @@ import styles from '@/styles/Home.module.css';
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Section - Full Width Rail-to-Rail */}
+      {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroImage}>
           <img
             src="/images/hero.jpg"
-            alt="Colorado CareAssist: calm, professional care in a home setting"
+            alt="Complete home care in Colorado"
             className={styles.heroImg}
             loading="eager"
             decoding="async"
@@ -20,417 +20,320 @@ export default function Home() {
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              Trusted Home Care
+              Complete Home Care
             </h1>
             <p className={styles.heroSubtitle}>
-              Locally Owned & Operated Since 2012
+              Daily living support. Home management. Handyman services. Pet care.
             </p>
-            <p className={styles.heroTagline}>
-              Colorado's Most Compassionate Caregivers
+            <p className={styles.heroConcierge}>
+              One plan. One rate. No gaps.
             </p>
             <div className={styles.heroCtas}>
               <Link href="/contact" className={styles.primaryCta}>
-                Give Us A Call Now
+                Request a Care Plan
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Marks Section */}
-      <section className={styles.trustMarks}>
-        <div className="container">
-          <div className={styles.trustGrid}>
-            <div className={styles.trustItem}>
-              <a 
-                href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
-                target="_blank" 
-                rel="nofollow noopener noreferrer"
-                className={styles.bbbBadge}
-              >
-                <img 
-                  src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
-                  alt="Colorado CareAssist BBB Business Review" 
-                />
+              <a href="tel:+13037571777" className={styles.secondaryCta}>
+                Call (303) 757-1777
               </a>
             </div>
-            <div className={styles.trustItem}>
-              <div className={styles.trustIcon}>✓</div>
-              <div className={styles.trustText}>
-                <strong>Background Checked</strong>
-                <span>CBI, CAPS & DMV verified</span>
+            {/* Trust Row */}
+            <div className={styles.trustRow}>
+              <div className={styles.trustBadge}>
+                <a 
+                  href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
+                  target="_blank" 
+                  rel="nofollow noopener noreferrer"
+                >
+                  <img 
+                    src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
+                    alt="Colorado CareAssist BBB Business Review"
+                    style={{ border: 0, height: '50px', width: 'auto' }}
+                  />
+                </a>
               </div>
-            </div>
-            <div className={styles.trustItem}>
-              <div className={styles.trustIcon}>🛡️</div>
-              <div className={styles.trustText}>
-                <strong>Fully Insured & Bonded</strong>
-                <span>$3 million in liability coverage</span>
-              </div>
-            </div>
-            <div className={styles.trustItem}>
-              <div className={styles.trustIcon}>🏔️</div>
-              <div className={styles.trustText}>
-                <strong>Colorado-Based Since 2012</strong>
-                <span>Family-owned, not a franchise</span>
+              <div className={styles.trustItem}>Family-owned since 2012</div>
+              <div className={styles.trustItem}>Insured & bonded</div>
+              <div className={styles.trustItem}>Background checked</div>
+              <div className={styles.trustItem}>
+                <Trustpilot />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* What We Do - Complete Home Care Grid */}
       <section id="services" className={styles.section}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Complete Home Care Services</h2>
+            <h2>What We Do</h2>
             <p className={styles.sectionSubtitle}>
-              One hourly rate. Complete care. No hidden fees or service tiers.
+              Complete home care under one hourly rate. No service tiers or hidden fees.
             </p>
           </div>
           
           <div className={styles.servicesGrid}>
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🛁</div>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
               <h3>ADL Support</h3>
-              <ul className={styles.serviceList}>
-                <li>Bathing & personal hygiene</li>
-                <li>Dressing assistance</li>
-                <li>Mobility & transfers</li>
-                <li>Toileting support</li>
-                <li>Medication reminders</li>
-              </ul>
+              <p>Bathing, dressing, mobility, toileting, transfers, medication reminders.</p>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🏠</div>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
               <h3>Housekeeping</h3>
-              <ul className={styles.serviceList}>
-                <li>Laundry & linens</li>
-                <li>Vacuuming & mopping</li>
-                <li>Kitchen cleaning</li>
-                <li>Bathroom sanitizing</li>
-                <li>General tidying</li>
-              </ul>
+              <p>Laundry, vacuuming, mopping, tidying. Maintain a clean, organized home.</p>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🍳</div>
-              <h3>Meal Preparation</h3>
-              <ul className={styles.serviceList}>
-                <li>Custom meal planning</li>
-                <li>Dietary accommodations</li>
-                <li>Grocery shopping</li>
-                <li>Cooking & cleanup</li>
-                <li>Nutrition monitoring</li>
-              </ul>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                  <line x1="6" y1="1" x2="6" y2="4"/>
+                  <line x1="10" y1="1" x2="10" y2="4"/>
+                  <line x1="14" y1="1" x2="14" y2="4"/>
+                </svg>
+              </div>
+              <h3>Meal Prep</h3>
+              <p>Nutritious meals prepared in your home. Dietary needs accommodated.</p>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🚗</div>
-              <h3>Transportation</h3>
-              <ul className={styles.serviceList}>
-                <li>Medical appointments</li>
-                <li>Errands & shopping</li>
-                <li>Social activities</li>
-                <li>Pharmacy visits</li>
-                <li>Safe, reliable drivers</li>
-              </ul>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <h3>Errands & Transportation</h3>
+              <p>Appointments, groceries, pharmacy runs. Reliable transportation when needed.</p>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🔧</div>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
               <h3>Handyman Services</h3>
-              <ul className={styles.serviceList}>
-                <li>Light home maintenance</li>
-                <li>Safety modifications</li>
-                <li>Grab bar installation</li>
-                <li>Minor repairs</li>
-                <li>On-staff handymen</li>
-              </ul>
+              <p>Light home maintenance and repairs. Handymen on staff, not contractors.</p>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🐕</div>
+              <div className={styles.serviceIcon}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M10.5 3.5c0 1.5-2 3-2 4.5 0 2.5 2 4 4 4s4-1.5 4-4c0-1.5-2-3-2-4.5"/>
+                  <path d="M12.5 12v8.5"/>
+                  <path d="M8 16l4.5 4.5L17 16"/>
+                </svg>
+              </div>
               <h3>Pet Care</h3>
-              <ul className={styles.serviceList}>
-                <li>Feeding & watering</li>
-                <li>Dog walking</li>
-                <li>Litter box cleaning</li>
-                <li>Companionship</li>
-                <li>Vet appointment transport</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className={styles.specialtyServices}>
-            <h3>Specialized Care Programs</h3>
-            <div className={styles.specialtyGrid}>
-              <Link href="/veterans" className={styles.specialtyCard}>
-                <h4>🎖️ Veterans Care</h4>
-                <p>Specialized training for veterans. VA benefits assistance available.</p>
-              </Link>
-              <Link href="/dementia-care" className={styles.specialtyCard}>
-                <h4>🧠 Dementia Care</h4>
-                <p>Expert dementia & Alzheimer's care with specialized training.</p>
-              </Link>
+              <p>Feeding, walks, companionship for your pets. Part of complete home support.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Standards Section */}
-      <section id="standards" className={styles.standardsSection}>
+      {/* Why We're Different */}
+      <section id="standards" className={styles.differentiators}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Uncompromising Safety Standards</h2>
-            <p className={styles.sectionSubtitle}>
-              Your loved one's safety is our top priority. Every caregiver undergoes rigorous screening.
-            </p>
+            <h2>Why We're Different</h2>
           </div>
-
-          <div className={styles.standardsGrid}>
-            <div className={styles.standardCard}>
-              <div className={styles.standardBadge}>✓</div>
-              <h3>CBI Background Checks</h3>
-              <p>Comprehensive Colorado Bureau of Investigation criminal background screening for all caregivers.</p>
+          
+          <div className={styles.diffGrid}>
+            <div className={styles.diffColumn}>
+              <h3>Better Caregivers</h3>
+              <ul>
+                <li>Paid above market rate</li>
+                <li>Benefits provided</li>
+                <li>Lower turnover, higher reliability</li>
+                <li>Dementia care training</li>
+                <li>Veteran care training</li>
+                <li>Ongoing professional development</li>
+              </ul>
             </div>
 
-            <div className={styles.standardCard}>
-              <div className={styles.standardBadge}>✓</div>
-              <h3>CAPS Verification</h3>
-              <p>Colorado Adult Protective Services registry checks to ensure caregiver integrity.</p>
+            <div className={styles.diffColumn}>
+              <h3>Safer Process</h3>
+              <ul>
+                <li>CBI background checks</li>
+                <li>CAPS verification</li>
+                <li>DMV checks</li>
+                <li>Random drug testing year-round</li>
+                <li>$3 million liability insurance</li>
+                <li>Honesty bonds</li>
+              </ul>
             </div>
 
-            <div className={styles.standardCard}>
-              <div className={styles.standardBadge}>✓</div>
-              <h3>DMV Checks</h3>
-              <p>Motor vehicle record verification for all caregivers providing transportation services.</p>
+            <div className={styles.diffColumn}>
+              <h3>Total Transparency</h3>
+              <ul>
+                <li>Digital Family Room portal</li>
+                <li>Real-time care notes</li>
+                <li>Schedule access for POA/estate managers</li>
+                <li>Billing transparency</li>
+                <li>Direct communication with care team</li>
+                <li>No surprises, no hidden fees</li>
+              </ul>
             </div>
-
-            <div className={styles.standardCard}>
-              <div className={styles.standardBadge}>✓</div>
-              <h3>Random Drug Testing</h3>
-              <p>Ongoing random drug screening throughout the year to maintain safety standards.</p>
-            </div>
-
-            <div className={styles.standardCard}>
-              <div className={styles.standardBadge}>✓</div>
-              <h3>Liability Insurance</h3>
-              <p>$3 million in liability coverage and honesty bonds for your protection.</p>
-            </div>
-
-            <div className={styles.standardCard}>
-              <div className={styles.standardBadge}>✓</div>
-              <h3>Specialized Training</h3>
-              <p>Dementia care and veterans care training for all caregivers.</p>
-            </div>
-          </div>
-
-          <div className={styles.standardsNote}>
-            <p>
-              <strong>Why it matters:</strong> We pay our caregivers more than Medicaid-focused agencies 
-              and offer benefits to improve retention and reliability. Better pay = better care.
-            </p>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className={styles.section}>
+      {/* How It Works */}
+      <section id="how-it-works" className={styles.howItWorks}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>How It Works</h2>
-            <p className={styles.sectionSubtitle}>
-              Getting started with Colorado CareAssist is simple and transparent.
-            </p>
           </div>
-
+          
           <div className={styles.stepsGrid}>
             <div className={styles.step}>
               <div className={styles.stepNumber}>1</div>
-              <h3>Free Consultation</h3>
-              <p>
-                Call us or request a care plan online. We'll discuss your loved one's needs, 
-                preferences, and schedule a complimentary in-home assessment.
-              </p>
+              <h3>Call</h3>
+              <p>Speak with a care manager. No sales pitch. Operational discussion.</p>
             </div>
 
             <div className={styles.step}>
               <div className={styles.stepNumber}>2</div>
-              <h3>Custom Care Plan</h3>
-              <p>
-                Our care manager creates a personalized care plan tailored to your specific needs. 
-                One hourly rate covers all services - no hidden fees.
-              </p>
+              <h3>Care Plan</h3>
+              <p>We build a plan around your needs. One rate covers everything.</p>
             </div>
 
             <div className={styles.step}>
               <div className={styles.stepNumber}>3</div>
-              <h3>Caregiver Match</h3>
-              <p>
-                We match you with a carefully screened caregiver who fits your needs and personality. 
-                Meet them before care begins.
-              </p>
+              <h3>Start Fast, Adjust Anytime</h3>
+              <p>Begin within days. Modify services as needs change. No contracts.</p>
             </div>
-
-            <div className={styles.step}>
-              <div className={styles.stepNumber}>4</div>
-              <h3>Care Begins</h3>
-              <p>
-                Your caregiver starts on your schedule. Access our Digital Family Room 24/7 to view 
-                care notes, schedules, and billing.
-              </p>
-            </div>
-          </div>
-
-          <div className={styles.familyPortal}>
-            <h3>📱 Digital Family Room</h3>
-            <p>
-              Stay connected with transparent, real-time access to care information. Perfect for 
-              family members, POA, and estate managers.
-            </p>
-            <ul className={styles.portalFeatures}>
-              <li>Real-time care notes & updates</li>
-              <li>Schedule management</li>
-              <li>Billing & invoicing</li>
-              <li>Caregiver communication</li>
-              <li>Multi-user access for family</li>
-            </ul>
           </div>
         </div>
       </section>
 
-      {/* Image Band - Care in Action */}
-      <section className={styles.imageBand}>
-        <div className={styles.imageBandContainer}>
-          <div className={styles.imageBandFrame}>
-            <img
-              src="/images/band.jpg"
-              alt="Colorado setting"
-              className={styles.imageBandImg}
-              loading="lazy"
-              decoding="async"
-              onError={(e) => {
-                const img = e.currentTarget;
-                img.style.display = 'none';
-                img.closest(`.${styles.imageBandFrame}`)?.classList.add(styles.imageMissing);
-              }}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section id="reviews" className={styles.reviewsSection}>
+      {/* Reviews */}
+      <section id="reviews" className={styles.reviews}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <h2>Trusted by Colorado Families</h2>
-            <p className={styles.sectionSubtitle}>
-              See what families across Colorado are saying about our care.
-            </p>
+            <h2>Client Reviews</h2>
           </div>
-          
-          <Trustpilot />
-          
-          <div className={styles.reviewsNote}>
-            <p>
-              Family-owned and operated since 2012. We're not a franchise - we're your neighbors, 
-              committed to providing the best home care in Colorado.
-            </p>
+          <div className={styles.reviewsContainer}>
+            <Trustpilot />
+          </div>
+          <div className={styles.bbbContainer}>
+            <a 
+              href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+            >
+              <img 
+                src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
+                alt="Colorado CareAssist BBB Business Review"
+                style={{ border: 0 }}
+              />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className={styles.section}>
+      {/* FAQ */}
+      <section id="faq" className={styles.faq}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>Frequently Asked Questions</h2>
           </div>
-
+          
           <div className={styles.faqGrid}>
             <div className={styles.faqItem}>
+              <h3>What does "Complete Home Care" mean?</h3>
+              <p>One team handles daily living support, housekeeping, meal prep, errands, transportation, handyman work, and pet care. No need to coordinate multiple providers.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>How does pricing work?</h3>
+              <p>One hourly or day rate covers all services. No service tiers, no hidden fees. Call for a custom quote based on your needs.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>How reliable is scheduling?</h3>
+              <p>We pay caregivers more and offer benefits, resulting in lower turnover and higher reliability. Backup coverage is standard.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>What background checks do you perform?</h3>
+              <p>CBI background checks, CAPS verification, DMV checks, and random drug testing throughout the year. Every caregiver is screened.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>Are you insured and bonded?</h3>
+              <p>Yes. $3 million in liability insurance and honesty bonds protect you and your home.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>Do you provide dementia care training?</h3>
+              <p>Yes. All caregivers receive specialized dementia care training. We understand memory care needs.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>Do you work with veterans?</h3>
+              <p>Yes. Veteran care training is standard. We assist with VA benefits navigation when applicable.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>What is the Family Room portal?</h3>
+              <p>A secure digital portal for authorized family members, POAs, and estate managers. View care notes, schedules, and billing in real time.</p>
+            </div>
+
+            <div className={styles.faqItem}>
+              <h3>Are you a franchise?</h3>
+              <p>No. Family-owned and Colorado-based since 2012. Independent operation, not corporate policies.</p>
+            </div>
+
+            <div className={styles.faqItem}>
               <h3>What areas do you serve?</h3>
-              <p>
-                We provide home care services throughout the Denver metro area, Boulder County, 
-                Colorado Springs, Pueblo County, and surrounding areas. Call us to confirm service 
-                in your specific location.
-              </p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>How is pricing structured?</h3>
-              <p>
-                We offer one simple hourly or day rate that covers all services - ADL support, 
-                housekeeping, meal prep, errands, transportation, and even handyman services. 
-                No hidden fees or service tiers. Contact us for current rates.
-              </p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Are you licensed and insured?</h3>
-              <p>
-                Yes. Colorado CareAssist is fully licensed and carries millions of dollars in 
-                liability insurance and honesty bonds to protect our clients and their families.
-              </p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>Can I use insurance or VA benefits?</h3>
-              <p>
-                We can assist with VA benefits paperwork and work with long-term care insurance 
-                providers. Contact us to discuss your specific situation and coverage options.
-              </p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>What makes you different from other agencies?</h3>
-              <p>
-                We're family-owned (not a franchise), pay caregivers more to ensure quality and 
-                retention, include handyman services on staff, provide a Digital Family Room for 
-                transparency, and maintain the highest safety standards in Colorado.
-              </p>
-            </div>
-
-            <div className={styles.faqItem}>
-              <h3>How quickly can care start?</h3>
-              <p>
-                In many cases, we can begin care within 24-48 hours of your initial consultation, 
-                depending on your schedule and care needs. We also accommodate planned start dates.
-              </p>
+              <p>Denver Metro, Boulder County, Colorado Springs, Pueblo County, and surrounding areas along the Front Range.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
+      {/* Final CTA */}
       <section className={styles.finalCta}>
         <div className="container">
-          <h2>Ready to Get Started?</h2>
-          <p>
-            Talk to a care manager today. We'll answer your questions and create a custom care plan 
-            for your loved one.
-          </p>
+          <h2>Ready to Start?</h2>
+          <p>Speak with a care manager. No sales pitch. Operational discussion.</p>
           <div className={styles.finalCtaButtons}>
             <Link href="/contact" className={styles.primaryCta}>
               Request a Care Plan
             </Link>
-            <div className={styles.finalCtaPhones}>
-              <a href="tel:+13037571777" className={styles.phoneButton}>
-                Denver/Boulder: (303) 757-1777
-              </a>
-              <a href="tel:+17194283999" className={styles.phoneButton}>
-                Colo Springs/Pueblo: (719) 428-3999
-              </a>
-            </div>
+            <a href="tel:+13037571777" className={styles.secondaryCta}>
+              Call Denver: (303) 757-1777
+            </a>
+            <a href="tel:+17194283999" className={styles.secondaryCta}>
+              Call Springs: (719) 428-3999
+            </a>
           </div>
-          <p className={styles.finalCtaEmail}>
-            Or email us: <a href="mailto:care@coloradocareassist.com">care@coloradocareassist.com</a>
-          </p>
         </div>
       </section>
+
+      {/* Mobile Sticky CTA Bar */}
+      <div className={styles.mobileStickyBar}>
+        <a href="tel:+13037571777" className={styles.mobileCallBtn}>
+          Call
+        </a>
+        <Link href="/contact" className={styles.mobileRequestBtn}>
+          Request Care Plan
+        </Link>
+      </div>
     </Layout>
   );
 }
-
