@@ -150,7 +150,8 @@ export default async function handler(
 
   // Validate environment variables
   const brevoApiKey = process.env.BREVO_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL;
+  // Use jason@coloradocareassist.com as primary destination
+  const toEmail = 'jason@coloradocareassist.com'; 
   const fromEmail = process.env.CONTACT_FROM_EMAIL;
   const fromName = process.env.CONTACT_FROM_NAME || 'Colorado CareAssist Website';
 
