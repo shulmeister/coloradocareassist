@@ -17,7 +17,7 @@ export function captureException(err: any) {
   } catch (e) {
     // swallow errors during error reporting
     // console.log intentionally kept minimal
-    console.error('Sentry capture failed', e?.message || e);
+    console.error('Sentry capture failed', (e as any)?.message || e);
   }
 }
 
