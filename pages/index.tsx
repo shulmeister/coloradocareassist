@@ -35,9 +35,9 @@ export default function Home() {
               <Link href="/contact" className={styles.primaryCta}>
                 Request a Care Plan
               </Link>
-              <a href="tel:+13037571777" className={styles.secondaryCta}>
-                Call (303) 757-1777
-              </a>
+              <Link href="/contact" className={styles.secondaryCta}>
+                Contact Us
+              </Link>
             </div>
             {/* Trust Row */}
             <div className={styles.trustRow}>
