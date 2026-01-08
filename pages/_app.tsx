@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import CookieConsent from '@/components/CookieConsent';
 import Analytics from '@/components/integrations/Analytics';
+import FacebookMessenger from '@/components/integrations/FacebookMessenger';
 import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -40,6 +41,9 @@ export default function App({ Component, pageProps }: AppProps) {
       
       {/* Analytics & Tracking */}
       <Analytics />
+      
+      {/* Facebook Messenger */}
+      <FacebookMessenger />
       
       {/* Main Content */}
       <Component {...pageProps} />

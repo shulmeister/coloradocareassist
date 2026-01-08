@@ -10,7 +10,7 @@ Premium home care agency marketing site built with Next.js, designed for deploym
 - **Deployment**: Heroku
 - **DNS**: Hostinger
 - **Analytics**: Google Tag Manager / GA4 + Meta Pixel
-- **Chat**: Tawk.to
+- **Chat**: Facebook Messenger
 - **Reviews**: Trustpilot
 
 ## 📋 Table of Contents
@@ -93,14 +93,10 @@ CONTACT_FROM_NAME=Colorado CareAssist Website
 3. Create a new API key
 4. Verify your sender email address (`CONTACT_FROM_EMAIL`)
 
-#### Tawk.to Live Chat (Optional - Currently Disabled)
+#### Facebook Messenger (Chat)
 ```env
-NEXT_PUBLIC_TAWK_ENABLED=false
-NEXT_PUBLIC_TAWK_PROPERTY_ID=
-NEXT_PUBLIC_TAWK_WIDGET_ID=
+NEXT_PUBLIC_FACEBOOK_PAGE_ID=532744706873716
 ```
-
-**Note**: Tawk.to widget integration is currently disabled. Planning custom chat solution using Tawk.to API for better design control. The site works perfectly without live chat - contact form and phone numbers are prominently displayed.
 
 #### Trustpilot Reviews
 ```env
@@ -171,10 +167,8 @@ heroku config:set CONTACT_TO_EMAIL=care@coloradocareassist.com
 heroku config:set CONTACT_FROM_EMAIL=noreply@coloradocareassist.com
 heroku config:set CONTACT_FROM_NAME="Colorado CareAssist Website"
 
-# Tawk.to
-heroku config:set NEXT_PUBLIC_TAWK_ENABLED=true
-heroku config:set NEXT_PUBLIC_TAWK_PROPERTY_ID=your_property_id
-heroku config:set NEXT_PUBLIC_TAWK_WIDGET_ID=your_widget_id
+# Facebook Messenger
+heroku config:set NEXT_PUBLIC_FACEBOOK_PAGE_ID=532744706873716
 
 # Trustpilot
 heroku config:set NEXT_PUBLIC_TRUSTPILOT_ENABLED=true
