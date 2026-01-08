@@ -86,10 +86,10 @@ export default function Header() {
               <Image
                 src="/cca-logo.png"
                 alt="Colorado CareAssist"
-                width={200}
-                height={65}
+                width={260}
+                height={85}
                 className={styles.logoImage}
-                style={{ width: 'auto', height: '65px' }}
+                style={{ width: 'auto', height: '85px' }}
                 onError={() => setLogoFailed(true)}
                 priority
               />
