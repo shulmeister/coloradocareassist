@@ -9,8 +9,27 @@ export default function Veterans() {
       description="Specialized home care for veterans in Colorado. VA benefits assistance available. Caregivers trained in veterans care. Serving Denver, Boulder, Colorado Springs & Pueblo."
     >
       <div className={styles.page}>
-        <div className={styles.hero}>
-          <div className="container">
+        <div className={styles.hero} style={{ position: 'relative' }}>
+          <div style={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0, 
+            zIndex: 0 
+          }}>
+            <img 
+              src="/images/veterans.jpg" 
+              alt="Veteran with service dog" 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover', 
+                opacity: 0.25 
+              }} 
+            />
+          </div>
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <h1>🎖️ Veterans Home Care</h1>
             <p className={styles.heroSubtitle}>
               Honoring those who served with specialized, compassionate home care
