@@ -313,7 +313,6 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
       const serverUrl = (process.env.RINGCENTRAL_SERVER || 'https://platform.ringcentral.com').replace(/\/$/, '');
       
       console.log('Sending SMS notification via RingCentral...');
-      console.log(`RC Server: ${serverUrl}`);
       try {
         const RingCentral = require('@ringcentral/sdk').SDK;
         const rcsdk = new RingCentral({
@@ -323,9 +322,7 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
         });
         const platform = rcsdk.platform();
 
-        console.log('Attempting RC Login...');
         await platform.login({ jwt: rcJwt });
-        console.log('RC Login successful.');
 
         const smsText = `New Lead: ${formData.name} (${formData.phone}) in ${formData.location}. Needs: ${formData.care_needs.substring(0, 50)}...`;
 
@@ -334,8 +331,6 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
         const phoneNumbersResponse = await platform.get('/restapi/v1.0/account/~/extension/~/phone-number');
         const phoneNumbers = await phoneNumbersResponse.json();
         
-        console.log(`Found ${phoneNumbers.records?.length || 0} phone numbers for extension.`);
-
         const validSender = phoneNumbers.records.find((record: any) => 
           record.features && record.features.includes('SmsSender')
         );
