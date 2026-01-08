@@ -6,57 +6,33 @@ import styles from '@/styles/Home.module.css';
 export default function Home() {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section - Full Width Rail-to-Rail */}
       <section className={styles.hero}>
+        <div className={styles.heroImage}>
+          <img
+            src="/images/hero.jpg"
+            alt="Colorado CareAssist: calm, professional care in a home setting"
+            className={styles.heroImg}
+            loading="eager"
+            decoding="async"
+          />
+        </div>
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              Complete Home Care<br />
-              <span className={styles.heroTitleAccent}>You Can Trust</span>
+              Trusted Home Care
             </h1>
             <p className={styles.heroSubtitle}>
-              Premium, independent home care services in Colorado. From ADL support to handyman services, 
-              we provide comprehensive care with the highest safety standards.
+              Locally Owned & Operated Since 2012
             </p>
-            <div className={styles.heroStats}>
-              <div className={styles.heroStat}>
-                <span className={styles.heroStatNumber}>12+</span>
-                <span className={styles.heroStatLabel}>Years Serving Colorado</span>
-              </div>
-              <div className={styles.heroStat}>
-                <span className={styles.heroStatNumber}>100%</span>
-                <span className={styles.heroStatLabel}>Background Checked</span>
-              </div>
-              <div className={styles.heroStat}>
-                <span className={styles.heroStatNumber}>24/7</span>
-                <span className={styles.heroStatLabel}>Family Portal Access</span>
-              </div>
-            </div>
+            <p className={styles.heroTagline}>
+              Colorado's Most Compassionate Caregivers
+            </p>
             <div className={styles.heroCtas}>
               <Link href="/contact" className={styles.primaryCta}>
-                Request a Care Plan
+                Give Us A Call Now
               </Link>
-              <a href="tel:+13037571777" className={styles.secondaryCta}>
-                Call Denver: (303) 757-1777
-              </a>
             </div>
-            <p className={styles.heroNote}>
-              <strong>Family-owned</strong> • Not a franchise • Colorado-based since 2012
-            </p>
-          </div>
-          <div className={styles.heroImage}>
-            <img
-              src="/images/hero.jpg"
-              alt="Colorado CareAssist: calm, professional care in a home setting"
-              className={styles.heroImg}
-              loading="eager"
-              decoding="async"
-              onError={(e) => {
-                const img = e.currentTarget;
-                img.style.display = 'none';
-                img.closest(`.${styles.heroImage}`)?.classList.add(styles.imageMissing);
-              }}
-            />
           </div>
         </div>
       </section>
