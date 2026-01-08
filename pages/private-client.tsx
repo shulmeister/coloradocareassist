@@ -71,7 +71,7 @@ export default function PrivateClient() {
               <ul>
                 <li>A dedicated onboarding manager</li>
                 <li>A single point of accountability for care coordination</li>
-                <li>A 2-hour business-hour response SLA</li>
+                <li>24/7 availability — a real person is always answering the phone</li>
               </ul>
               <p style={{ marginTop: '1rem', fontStyle: 'italic' }}>No call centers. No rotating contacts. No "we'll get back to you."</p>
             </div>
@@ -247,7 +247,7 @@ export default function PrivateClient() {
           
           <p className={styles.ctaNote}>
             <strong>To initiate:</strong> Email care@coloradocareassist.com, or submit a care plan request and select “Immediately”, noting Private Client Concierge in the description.<br />
-            We will respond within two business hours.
+            We are available 24/7.
           </p>
         </div>
       </section>
