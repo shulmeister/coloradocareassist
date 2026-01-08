@@ -33,6 +33,7 @@ interface ContactFormData {
   care_needs: string;
   timeframe: string;
   preferred_contact_method: string;
+  sms_consent?: boolean;
   honeypot?: string; // Spam protection
 }
 

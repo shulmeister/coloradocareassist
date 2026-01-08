@@ -12,6 +12,7 @@ export default function Contact() {
     care_needs: '',
     timeframe: '',
     preferred_contact_method: '',
+    sms_consent: false,
     honeypot: '' // Spam protection
   });
 
@@ -47,7 +48,8 @@ export default function Contact() {
           care_needs: '',
           timeframe: '',
           preferred_contact_method: '',
-          honeypot: ''
+          honeypot: '',
+          sms_consent: false
         });
       } else {
         setStatus('error');
@@ -62,7 +64,7 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
     });
   };
 
@@ -299,6 +301,21 @@ export default function Contact() {
                   <p className={styles.formNote}>
                     * Required fields. We respect your privacy and will never share your information.
                   </p>
+
+                  <div className={styles.formGroup} style={{ marginTop: '1rem' }}>
+                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', cursor: 'pointer' }}>
+                      <input
+                        type="checkbox"
+                        name="sms_consent"
+                        checked={formData.sms_consent}
+                        onChange={handleChange}
+                        style={{ width: 'auto', marginTop: '4px' }}
+                      />
+                      <span>
+                        I agree to receive text messages from Colorado CareAssist at the phone number provided above. Message and data rates may apply. Reply STOP to opt out.
+                      </span>
+                    </label>
+                  </div>
                 </form>
               )}
             </div>
