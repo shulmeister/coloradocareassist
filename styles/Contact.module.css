@@ -12,7 +12,7 @@
 }
 
 .header h1 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2.75rem;
   margin-bottom: var(--spacing-lg);
   color: var(--color-brown);
@@ -49,7 +49,7 @@
 }
 
 .infoCard h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.25rem;
   margin-bottom: var(--spacing-md);
   color: var(--color-leaf-dark);
@@ -116,7 +116,7 @@
 }
 
 .form h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.625rem;
   margin-bottom: var(--spacing-xl);
   color: var(--color-brown);
@@ -228,7 +228,7 @@
 }
 
 .successMessage h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2rem;
   color: var(--color-leaf-dark);
   margin-bottom: var(--spacing-md);

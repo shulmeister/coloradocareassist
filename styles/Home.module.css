@@ -31,14 +31,27 @@
   background: var(--color-background-alt);
 }
 
+.heroImage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(250, 249, 245, 0.25) 0%, rgba(201, 214, 143, 0.15) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .heroImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  box-shadow: var(--shadow-lg);
-  opacity: 0.92;
+  box-shadow: var(--shadow-md);
+  opacity: 0.7;
   object-position: center;
   display: block;
+  filter: brightness(1.08) saturate(0.9);
 }
 
 .imageMissing {
@@ -58,7 +71,7 @@
   text-align: center;
 }
 .heroTitle {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 3.25rem;
   line-height: 1.2;
   margin-bottom: var(--spacing-lg);
@@ -98,7 +111,7 @@
 }
 
 .heroStatNumber {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--color-leaf-dark);
@@ -217,7 +230,7 @@
 }
 
 .trustText strong {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 0.9375rem;
   color: var(--color-brown);
   font-weight: 600;
@@ -246,7 +259,7 @@
 }
 
 .sectionHeader h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2.5rem;
   margin-bottom: var(--spacing-lg);
   color: var(--color-brown);
@@ -289,7 +302,7 @@
 }
 
 .serviceCard h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.375rem;
   margin-bottom: var(--spacing-md);
   color: var(--color-brown);
@@ -330,7 +343,7 @@
 }
 
 .specialtyServices h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2.5rem;
@@ -361,7 +374,7 @@
 }
 
 .specialtyCard h4 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.375rem;
   color: var(--color-leaf-dark);
   margin-bottom: var(--spacing-sm);
@@ -412,7 +425,7 @@
 }
 
 .standardCard h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.1875rem;
   margin-bottom: var(--spacing-sm);
   color: var(--color-brown);
@@ -464,14 +477,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 auto var(--spacing-md);
 }
 
 .step h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.1875rem;
   margin-bottom: var(--spacing-sm);
   color: var(--color-brown);
@@ -497,7 +510,7 @@
 }
 
 .familyPortal h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.625rem;
   color: var(--color-leaf-dark);
   margin-bottom: var(--spacing-md);
@@ -612,7 +625,7 @@
 }
 
 .faqItem h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.1875rem;
   margin-bottom: var(--spacing-md);
   color: var(--color-brown);
@@ -637,7 +650,7 @@
 }
 
 .finalCta h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2.5rem;
   color: var(--color-brown);
   margin-bottom: var(--spacing-lg);

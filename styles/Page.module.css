@@ -14,7 +14,7 @@
 }
 
 .hero h1 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 3rem;
   color: var(--color-brown);
   margin-bottom: var(--spacing-lg);
@@ -38,7 +38,7 @@
 }
 
 .section h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2.25rem;
   margin-bottom: var(--spacing-xl);
   text-align: center;
@@ -86,7 +86,7 @@
 }
 
 .card h3 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.375rem;
   margin-bottom: var(--spacing-md);
   color: var(--color-brown);
@@ -128,7 +128,7 @@
 }
 
 .highlightSection h2 {
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 2.25rem;
   margin-bottom: var(--spacing-xl);
   text-align: center;
@@ -168,7 +168,7 @@
 .benefitItem strong,
 .trainingItem strong {
   display: block;
-  font-family: var(--font-family-serif);
+  font-family: var(--font-family-heading);
   font-size: 1.125rem;
   color: var(--color-leaf-dark);
   margin-bottom: var(--spacing-sm);
