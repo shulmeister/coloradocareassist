@@ -78,7 +78,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.heroBadge}>
+          
+          <div className={styles.heroBadgeLeft}>
+            <Image 
+              src="/images/VA CCN logo.jpg" 
+              alt="VA Community Care Network Provider"
+              width={150}
+              height={150}
+              style={{ width: '120px', height: 'auto', borderRadius: '8px' }}
+            />
+          </div>
+
+          <div className={styles.heroBadgeRight}>
             <a 
               href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
               target="_blank" 

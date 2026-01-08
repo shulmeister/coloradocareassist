@@ -157,14 +157,25 @@
   margin-top: var(--s4);
 }
 
-.heroBadge {
+.heroBadgeLeft {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.heroBadgeLeft img {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.heroBadgeRight {
   position: absolute;
   bottom: 2rem;
   right: 2rem;
   z-index: 10;
 }
 
-.heroBadge img {
+.heroBadgeRight img {
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
@@ -618,9 +629,11 @@
     padding: var(--s4);
   }
 
-  .heroBadge {
+  .heroBadgeLeft,
+  .heroBadgeRight {
     position: relative;
     bottom: auto;
+    left: auto;
     right: auto;
     margin-top: var(--s4);
     display: flex;
