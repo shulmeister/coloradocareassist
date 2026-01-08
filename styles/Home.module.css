@@ -84,7 +84,7 @@
 .heroCtas {
   display: flex;
   gap: var(--s3);
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s3);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -95,7 +95,7 @@
   color: var(--color-brown);
   text-decoration: underline;
   font-size: 0.9375rem;
-  margin-bottom: var(--s5);
+  margin-bottom: var(--s3);
   font-weight: 500;
   opacity: 0.9;
   transition: opacity 0.2s ease;
@@ -144,20 +144,23 @@
 
 /* Trust Row - Properly Contained */
 .trustRow {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--s5);
   flex-wrap: wrap;
-  padding: var(--s3);
+  padding: 1rem 2rem;
   background: rgba(250, 249, 245, 0.95);
   border-radius: 8px;
   border: 1px solid var(--color-olive);
   max-width: 100%;
+  margin-top: var(--s4);
 }
 
 .trustBadge {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
 .trustBadge img {
