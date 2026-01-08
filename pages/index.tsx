@@ -81,11 +81,11 @@ export default function Home() {
           
           <div className={styles.heroBadgeLeft}>
             <Image 
-              src="/images/VA CCN logo.jpg" 
+              src="/images/Stacked-Full-Color-on-Light.png" 
               alt="VA Community Care Network Provider"
-              width={150}
-              height={150}
-              style={{ width: '120px', height: 'auto', borderRadius: '8px' }}
+              width={200}
+              height={200}
+              style={{ width: '140px', height: 'auto', borderRadius: '8px' }}
             />
           </div>
 
