@@ -10,9 +10,9 @@
 /* Top Bar - Contact Info + Logins */
 .topBar {
   background: #B8B396; /* Lighter, less brown version of olive */
-  color: var(--color-charcoal);
-  padding: 0.5rem 0;
-  font-size: 0.875rem;
+  color: var(--color-off-white);
+  padding: 0.25rem 0;
+  font-size: 0.75rem;
 }
 
 .topBar .container {
@@ -31,13 +31,13 @@
 }
 
 .topBarLink {
-  color: var(--color-charcoal);
+  color: var(--color-off-white);
   text-decoration: none;
   transition: opacity var(--transition-fast);
 }
 
 .topBarLink:hover {
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .loginLinks {
@@ -47,19 +47,19 @@
 }
 
 .loginLink {
-  color: var(--color-charcoal);
+  color: var(--color-off-white);
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   transition: opacity var(--transition-fast);
 }
 
 .loginLink:hover {
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .loginSeparator {
-  color: var(--color-charcoal);
-  opacity: 0.5;
+  color: var(--color-off-white);
+  opacity: 0.7;
 }
 
 /* Main Nav - Logo + Links + CTA */
