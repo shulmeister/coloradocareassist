@@ -7,7 +7,7 @@ export default function Veterans() {
   return (
     <Layout
       title="Veterans Home Care - Colorado CareAssist"
-      description="Specialized home care for veterans in Colorado. VA benefits assistance available. Caregivers trained in veterans care. Serving Denver, Boulder, Colorado Springs & Pueblo."
+      description="Specialized home care for veterans in Colorado. VA benefits assistance available. Caregivers trained in veterans care. Serving Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo."
     >
       <div className={styles.page}>
         <div className={styles.hero} style={{ position: 'relative' }}>
@@ -190,7 +190,7 @@ export default function Veterans() {
               </a>
             </div>
             <p className={styles.ctaNote}>
-              Serving veterans throughout Denver, Boulder, Colorado Springs, Pueblo, and surrounding areas.
+              Serving veterans throughout Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo, and surrounding areas.
             </p>
           </section>
         </div>

@@ -137,26 +137,14 @@ export default function About() {
             </p>
             <div className={styles.serviceAreas}>
               <div className={styles.serviceArea}>
-                <h3>Denver Metro Area</h3>
-                <p>Denver, Aurora, Lakewood, Littleton, Englewood, and surrounding communities</p>
+                <h3>Denver Metro & Northern Colorado</h3>
+                <p>Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe</p>
                 <a href="tel:+13037571777" className={styles.areaPhone}>(303) 757-1777</a>
               </div>
 
               <div className={styles.serviceArea}>
-                <h3>Boulder County</h3>
-                <p>Boulder, Longmont, Lafayette, Louisville, Erie, and surrounding areas</p>
-                <a href="tel:+13037571777" className={styles.areaPhone}>(303) 757-1777</a>
-              </div>
-
-              <div className={styles.serviceArea}>
-                <h3>Colorado Springs</h3>
-                <p>Colorado Springs, Fountain, Monument, and surrounding communities</p>
-                <a href="tel:+17194283999" className={styles.areaPhone}>(719) 428-3999</a>
-              </div>
-
-              <div className={styles.serviceArea}>
-                <h3>Pueblo County</h3>
-                <p>Pueblo, Pueblo West, and surrounding areas</p>
+                <h3>Southern Colorado</h3>
+                <p>El Paso, Pueblo</p>
                 <a href="tel:+17194283999" className={styles.areaPhone}>(719) 428-3999</a>
               </div>
             </div>

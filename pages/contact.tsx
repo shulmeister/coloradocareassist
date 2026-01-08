@@ -69,7 +69,7 @@ export default function Contact() {
   return (
     <Layout
       title="Contact Us - Colorado CareAssist"
-      description="Request a care plan or talk to a care manager. Serving Denver, Boulder, Colorado Springs & Pueblo. Call (303) 757-1777 or (719) 428-3999."
+      description="Request a care plan or talk to a care manager. Serving Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo. Call (303) 757-1777 or (719) 428-3999."
     >
       <div className={styles.contactPage}>
         <div className="container">
@@ -108,11 +108,15 @@ export default function Contact() {
               <div className={styles.infoCard}>
                 <h2>📍 Service Areas</h2>
                 <ul>
-                  <li>Denver Metro Area</li>
-                  <li>Boulder County</li>
-                  <li>Colorado Springs</li>
-                  <li>Pueblo County</li>
-                  <li>Surrounding Areas</li>
+                  <li>Boulder</li>
+                  <li>Broomfield</li>
+                  <li>Denver</li>
+                  <li>Adams</li>
+                  <li>Jefferson</li>
+                  <li>Douglas</li>
+                  <li>Arapahoe</li>
+                  <li>El Paso</li>
+                  <li>Pueblo</li>
                 </ul>
               </div>
 
@@ -226,7 +230,7 @@ export default function Contact() {
                       name="location"
                       value={formData.location}
                       onChange={handleChange}
-                      placeholder="e.g., Denver, Boulder, Colorado Springs"
+                      placeholder="e.g., Denver, Arapahoe, El Paso"
                       required
                       disabled={status === 'submitting'}
                     />

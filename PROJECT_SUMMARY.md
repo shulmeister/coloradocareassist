@@ -167,11 +167,15 @@ NEXT_PUBLIC_SITE_URL=https://coloradocareassist.com
 - **Careers**: careers@coloradocareassist.com (mentioned on careers page)
 
 ### Service Areas
-- Denver Metro Area
-- Boulder County
-- Colorado Springs
-- Pueblo County
-- Surrounding Areas
+- Boulder
+- Broomfield
+- Denver
+- Adams
+- Jefferson
+- Douglas
+- Arapahoe
+- El Paso
+- Pueblo
 
 ---
 

@@ -14,7 +14,7 @@ interface LayoutProps {
 export default function Layout({ 
   children, 
   title = 'Colorado CareAssist - Complete Home Care in Colorado',
-  description = 'Premium home care services in Denver, Boulder, Colorado Springs & Pueblo. Complete care including ADL support, housekeeping, meal prep, handyman services & more. Family-owned since 2012.',
+  description = 'Premium home care services in Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo. Complete care including ADL support, housekeeping, meal prep, handyman services & more. Family-owned since 2012.',
   ogImage = '/og-image.jpg',
   noIndex = false
 }: LayoutProps) {

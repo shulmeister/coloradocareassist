@@ -404,7 +404,7 @@ export default function Home() {
 
             <div className={styles.faqItem}>
               <h3>What areas do you serve?</h3>
-              <p>Denver Metro, Boulder County, Colorado Springs, Pueblo County, and surrounding areas along the Front Range.</p>
+              <p>Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo, and surrounding areas along the Front Range.</p>
             </div>
           </div>
         </div>
