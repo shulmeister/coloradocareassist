@@ -266,23 +266,12 @@
 
 @media (max-width: 768px) {
   .topBar {
-    font-size: 0.8125rem;
-  }
-
-  .contactInfo {
-    flex-direction: column;
-    gap: 0.25rem;
-    align-items: flex-start;
-  }
-
-  .loginLinks {
-    flex-direction: column;
-    gap: 0.25rem;
-    align-items: flex-end;
-  }
-
-  .loginSeparator {
     display: none;
+  }
+
+  /* Adjust main nav padding since top bar is gone */
+  .mainNav {
+    padding: 0.75rem 0;
   }
 
   .logoImage {
