@@ -73,6 +73,10 @@
   color: var(--color-off-white);
 }
 
+.loginHeading {
+  margin-top: var(--spacing-xl);
+}
+
 .links {
   list-style: none;
   padding: 0;

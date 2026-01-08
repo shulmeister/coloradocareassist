@@ -96,6 +96,26 @@ export default function Header() {
           Request Care Plan
         </Link>
 
+        {/* Login Links */}
+        <div className={styles.loginLinks}>
+          <a 
+            href="https://ccacarehomes.clearcareonline.com/family-room/login/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={styles.loginLink}
+          >
+            Client Log In
+          </a>
+          <a 
+            href="https://colcareassist.clearcareonline.com/login/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={styles.loginLink}
+          >
+            Employee Log In
+          </a>
+        </div>
+
         {/* Mobile Menu Button */}
         <button 
           className={styles.mobileMenuButton}
@@ -152,6 +172,25 @@ export default function Header() {
           <Link href="/contact" className={styles.mobileCtaButton}>
             Request Care Plan
           </Link>
+
+          <div className={styles.mobileLoginLinks}>
+            <a 
+              href="https://ccacarehomes.clearcareonline.com/family-room/login/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.mobileLoginLink}
+            >
+              Client Log In
+            </a>
+            <a 
+              href="https://colcareassist.clearcareonline.com/login/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.mobileLoginLink}
+            >
+              Employee Log In
+            </a>
+          </div>
         </div>
       )}
     </header>

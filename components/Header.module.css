@@ -113,6 +113,31 @@
   color: var(--color-off-white);
 }
 
+/* Login Links */
+.loginLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-left: var(--spacing-md);
+}
+
+.loginLink {
+  font-size: 0.8125rem;
+  color: var(--color-charcoal);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.loginLink:hover {
+  color: var(--color-leaf-dark);
+  border-bottom-color: var(--color-olive);
+  opacity: 1;
+}
+
 /* Mobile Menu */
 .mobileMenuButton {
   display: none;
@@ -203,6 +228,34 @@
   border: 2px solid var(--color-leaf-dark);
 }
 
+/* Mobile Login Links */
+.mobileLoginLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-olive);
+}
+
+.mobileLoginLink {
+  display: block;
+  padding: var(--spacing-sm);
+  color: var(--color-charcoal);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--color-olive);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.mobileLoginLink:hover {
+  background-color: var(--color-background-alt);
+  border-color: var(--color-leaf-dark);
+  color: var(--color-leaf-dark);
+}
+
 /* Tablet and Mobile */
 @media (max-width: 1024px) {
   .phones {
@@ -221,7 +274,8 @@
 @media (max-width: 768px) {
   .nav,
   .phones,
-  .ctaButton {
+  .ctaButton,
+  .loginLinks {
     display: none;
   }
   

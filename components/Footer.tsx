@@ -54,6 +54,27 @@ export default function Footer() {
               <li><Link href="/careers">Careers</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
+            <h4 className={`${styles.columnHeading} ${styles.loginHeading}`}>Log In</h4>
+            <ul className={styles.links}>
+              <li>
+                <a 
+                  href="https://ccacarehomes.clearcareonline.com/family-room/login/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Client Log In
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://colcareassist.clearcareonline.com/login/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Employee Log In
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Service Areas */}
