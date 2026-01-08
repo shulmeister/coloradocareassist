@@ -56,9 +56,36 @@ export default function Home() {
                   />
                 </a>
               </div>
-              <div className={styles.trustItem}>Family-owned since 2012</div>
-              <div className={styles.trustItem}>Insured & bonded</div>
-              <div className={styles.trustItem}>Background checked</div>
+              
+              <div className={styles.trustItem}>
+                <div className={styles.trustIcon}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+                <span>Family-owned since 2012</span>
+              </div>
+              
+              <div className={styles.trustItem}>
+                <div className={styles.trustIcon}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <span>Insured & bonded</span>
+              </div>
+              
+              <div className={styles.trustItem}>
+                <div className={styles.trustIcon}>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="8.5" cy="7" r="4"/>
+                    <polyline points="17 11 19 13 23 9"/>
+                  </svg>
+                </div>
+                <span>Background checked</span>
+              </div>
+
               <div className={styles.trustItem}>
                 <Trustpilot />
               </div>
@@ -230,24 +257,57 @@ export default function Home() {
         <div className="container">
           <div className={styles.sectionHeader}>
             <h2>Client Reviews</h2>
+            <div className={styles.googleRating}>
+              <span className={styles.stars}>★★★★★</span>
+              <span className={styles.ratingText}>5.0 on Google</span>
+            </div>
           </div>
-          <div className={styles.reviewsContainer}>
-            <Trustpilot />
-          </div>
-          <div className={styles.bbbContainer}>
-            <a 
-              href="https://www.bbb.org/us/co/colorado-springs/profile/senior-home-care/colorado-careassist-0785-87351007/#sealclick" 
-              target="_blank" 
-              rel="nofollow noopener noreferrer"
-            >
-              <Image 
-                src="https://seal-southerncolorado.bbb.org/seals/blue-seal-293-61-bbb-87351007.png" 
-                alt="Colorado CareAssist BBB Business Review"
-                width={293}
-                height={61}
-                style={{ border: 0, maxWidth: '200px', height: 'auto' }}
-              />
-            </a>
+          
+          <div className={styles.reviewsGrid}>
+            <div className={styles.reviewCard}>
+              <div className={styles.reviewHeader}>
+                <div className={styles.reviewerInitial} style={{ backgroundColor: '#2D7D9A' }}>R</div>
+                <div className={styles.reviewerInfo}>
+                  <div className={styles.reviewerName}>Rob Mirpuri</div>
+                  <div className={styles.reviewDate}>9 weeks ago</div>
+                </div>
+                <div className={styles.googleIcon}>G</div>
+              </div>
+              <div className={styles.reviewStars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                Jason was great. He answered all my questions and provided great service when picking me up from the hospital after surgery. I will use his services again.
+              </p>
+            </div>
+
+            <div className={styles.reviewCard}>
+              <div className={styles.reviewHeader}>
+                <div className={styles.reviewerInitial} style={{ backgroundColor: '#D9436A' }}>L</div>
+                <div className={styles.reviewerInfo}>
+                  <div className={styles.reviewerName}>Lilah Parks</div>
+                  <div className={styles.reviewDate}>10 weeks ago</div>
+                </div>
+                <div className={styles.googleIcon}>G</div>
+              </div>
+              <div className={styles.reviewStars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                Colorado Care Assist has been such a blessing for my grandma. Living far away I’m not able to give her the attention and care she deserves, but knowing she is in good hands puts my mind at ease.
+              </p>
+            </div>
+
+            <div className={styles.reviewCard}>
+              <div className={styles.reviewHeader}>
+                <div className={styles.reviewerInitial} style={{ backgroundColor: '#1C5B38' }}>J</div>
+                <div className={styles.reviewerInfo}>
+                  <div className={styles.reviewerName}>Joanne Jones</div>
+                  <div className={styles.reviewDate}>5 days ago</div>
+                </div>
+                <div className={styles.googleIcon}>G</div>
+              </div>
+              <div className={styles.reviewStars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                Awesome services, I have a lady named Jean that helps me with whatever I need. She is always so kind and caring and so helpful. CO Care Assist Is a great company and very timely! J. Jones
+              </p>
+            </div>
           </div>
         </div>
       </section>

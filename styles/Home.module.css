@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--s4);
+  gap: var(--s5);
   flex-wrap: wrap;
   padding: var(--s3);
   background: rgba(250, 249, 245, 0.95);
@@ -151,10 +151,25 @@
 }
 
 .trustItem {
-  font-size: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
   color: var(--color-charcoal);
   font-weight: 500;
   white-space: nowrap;
+}
+
+.trustIcon {
+  color: var(--color-leaf-dark);
+  width: 24px;
+  height: 24px;
+}
+
+.trustIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* Sections - Consistent Rhythm */
@@ -325,17 +340,100 @@
 }
 
 .reviewsContainer {
-  max-width: 900px;
+  max-width: var(--container);
   margin: 0 auto 32px;
 }
 
-.bbbContainer {
-  text-align: center;
+.googleRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-.bbbContainer img {
-  max-width: 200px;
-  height: auto;
+.stars {
+  color: #fbbf24;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.ratingText {
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.reviewCard {
+  background: var(--color-off-white);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.reviewerInitial {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.reviewerInfo {
+  flex: 1;
+}
+
+.reviewerName {
+  font-weight: 600;
+  color: var(--color-charcoal);
+  font-size: 0.9375rem;
+}
+
+.reviewDate {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.googleIcon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #4285F4;
+  font-size: 1.25rem;
+}
+
+.reviewStars {
+  color: #fbbf24;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+.reviewText {
+  font-size: 0.9375rem;
+  color: var(--color-charcoal);
+  line-height: 1.6;
 }
 
 /* FAQ */
@@ -456,14 +554,23 @@
   }
 
   .trustRow {
-    flex-direction: column;
-    gap: var(--s3);
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--s4);
     padding: var(--s4);
   }
 
   .trustItem {
-    white-space: normal;
+    width: 45%;
     text-align: center;
+    font-size: 0.75rem;
+  }
+  
+  .trustBadge {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
   }
 
   .servicesGrid,
