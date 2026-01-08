@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import Trustpilot from '@/components/integrations/Trustpilot';
 import styles from '@/styles/Home.module.css';
 
@@ -45,9 +46,12 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.heroImage}>
-            <img 
-              src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80&auto=format&fit=crop"
-              alt="Warm, calm home setting in Colorado"
+            <Image
+              src="/images/hero.jpg"
+              alt="Colorado CareAssist: calm, professional care in a home setting"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.heroImg}
             />
           </div>
@@ -321,11 +325,15 @@ export default function Home() {
       {/* Image Band - Care in Action */}
       <section className={styles.imageBand}>
         <div className={styles.imageBandContainer}>
-          <img 
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80&auto=format&fit=crop"
-            alt="Colorado landscape, calm and natural"
-            className={styles.imageBandImg}
-          />
+          <div className={styles.imageBandFrame}>
+            <Image
+              src="/images/band.jpg"
+              alt="Colorado setting"
+              fill
+              sizes="100vw"
+              className={styles.imageBandImg}
+            />
+          </div>
         </div>
       </section>
 

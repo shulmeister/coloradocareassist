@@ -533,13 +533,20 @@
   padding: 0 var(--container-padding);
 }
 
-.imageBandImg {
+.imageBandFrame {
+  position: relative;
   width: 100%;
   height: 400px;
-  object-fit: cover;
   border-radius: var(--radius-lg);
-  opacity: 0.88;
+  overflow: hidden;
   box-shadow: var(--shadow-md);
+}
+
+.imageBandImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
 }
 
 /* Reviews Section - Editorial Style */
@@ -800,9 +807,7 @@
     padding: 0 var(--container-padding-mobile);
   }
 
-  .imageBandImg {
-    height: 300px;
-  }
+  .imageBandFrame { height: 300px; }
   
   .sectionHeader h2 {
     font-size: 2rem;
@@ -848,8 +853,6 @@
     font-size: 0.75rem;
   }
 
-  .imageBandImg {
-    height: 250px;
-  }
+  .imageBandFrame { height: 250px; }
 }
 
