@@ -6,40 +6,43 @@
 
 .fallback {
   background-color: var(--color-background-alt);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
   text-align: center;
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-olive);
 }
 
 .fallbackContent h3 {
-  font-size: 1.5rem;
+  font-family: var(--font-family-serif);
+  font-size: 1.625rem;
   margin-bottom: var(--spacing-md);
-  color: var(--color-text);
+  color: var(--color-brown);
+  font-weight: 600;
 }
 
 .fallbackContent p {
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-lg);
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-xl);
   font-size: 1.0625rem;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
 .fallbackButton {
   display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #00b67a;
-  color: white;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--color-leaf-dark);
+  color: var(--color-off-white);
   font-weight: 600;
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-leaf-dark);
 }
 
 .fallbackButton:hover {
-  background-color: #00995f;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  color: white;
+  background-color: var(--color-brown);
+  border-color: var(--color-brown);
+  color: var(--color-off-white);
 }
 

@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   z-index: 9999;
-  background-color: white;
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
-  border-top: 1px solid var(--color-border);
+  background-color: var(--color-off-white);
+  box-shadow: 0 -2px 12px rgba(92, 46, 12, 0.12);
+  border-top: 1px solid var(--color-olive);
   animation: slideUp 0.3s ease;
 }
 
@@ -34,17 +34,19 @@
 }
 
 .title {
+  font-family: var(--font-family-serif);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-brown);
   margin-bottom: var(--spacing-xs);
 }
 
 .description {
   font-size: 0.875rem;
-  color: var(--color-text-light);
+  color: var(--color-charcoal);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
+  opacity: 0.9;
 }
 
 .actions {
@@ -55,34 +57,35 @@
 
 .acceptButton,
 .declineButton {
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1.25rem;
   font-weight: 600;
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
   white-space: nowrap;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .acceptButton {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-leaf-dark);
+  color: var(--color-off-white);
+  border: 2px solid var(--color-leaf-dark);
 }
 
 .acceptButton:hover {
-  background-color: var(--color-primary-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  background-color: var(--color-brown);
+  border-color: var(--color-brown);
 }
 
 .declineButton {
   background-color: transparent;
-  color: var(--color-text-light);
-  border: 1px solid var(--color-border);
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-olive);
 }
 
 .declineButton:hover {
   background-color: var(--color-background-alt);
-  color: var(--color-text);
+  border-color: var(--color-leaf-dark);
+  color: var(--color-leaf-dark);
 }
 
 /* Mobile */
