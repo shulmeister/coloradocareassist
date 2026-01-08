@@ -195,8 +195,23 @@ export default function Careers() {
             <div className={styles.applicationInfo}>
               <h3>How to Apply</h3>
               <p>
-                To apply for a position with Colorado CareAssist, please send your resume and a brief 
-                cover letter explaining why you're interested in caregiving to:
+                Ready to start your journey with us? The fastest way to apply is through our secure online portal.
+              </p>
+              
+              <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+                <a 
+                  href="https://colcareassist.clearcareonline.com/apply/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.primaryButton}
+                  style={{ display: 'inline-block', fontSize: '1.1rem', padding: '1rem 2rem' }}
+                >
+                  Start Online Application
+                </a>
+              </div>
+
+              <p>
+                You can also email your resume to:
               </p>
               <p className={styles.applicationEmail}>
                 <strong>Email:</strong> <a href="mailto:careers@coloradocareassist.com">careers@coloradocareassist.com</a>
