@@ -300,40 +300,42 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
       // Don't fail the request if auto-reply fails, as the lead was already captured
     }
 
-    // Send SMS Notification (Beetexting)
-    const beetextingApiKey = process.env.BEETEXTING_API_KEY;
-    const beetextingFrom = process.env.BEETEXTING_FROM_NUMBER;
-    const beetextingTo = process.env.BEETEXTING_TO_NUMBER;
+    // Send SMS Notification (RingCentral)
+    const rcClientId = process.env.RINGCENTRAL_CLIENT_ID;
+    const rcClientSecret = process.env.RINGCENTRAL_CLIENT_SECRET;
+    const rcServer = process.env.RINGCENTRAL_SERVER || 'https://platform.ringcentral.com';
+    const rcJwt = process.env.RINGCENTRAL_JWT;
+    const rcFrom = process.env.RINGCENTRAL_FROM_NUMBER;
+    const rcTo = process.env.RINGCENTRAL_TO_NUMBER;
 
-    if (beetextingApiKey && beetextingFrom && beetextingTo) {
-      console.log('Sending SMS notification via Beetexting...');
+    if (rcClientId && rcClientSecret && rcJwt && rcFrom && rcTo) {
+      console.log('Sending SMS notification via RingCentral...');
       try {
+        const RingCentral = require('@ringcentral/sdk').SDK;
+        const rcsdk = new RingCentral({
+          server: rcServer,
+          clientId: rcClientId,
+          clientSecret: rcClientSecret
+        });
+        const platform = rcsdk.platform();
+
+        await platform.login({ jwt: rcJwt });
+
         const smsText = `New Lead: ${formData.name} (${formData.phone}) in ${formData.location}. Needs: ${formData.care_needs.substring(0, 50)}...`;
-        
-        const params = new URLSearchParams({
-          from: beetextingFrom,
-          to: beetextingTo,
+
+        const response = await platform.post('/restapi/v1.0/account/~/extension/~/sms', {
+          from: { phoneNumber: rcFrom },
+          to: [{ phoneNumber: rcTo }],
           text: smsText
         });
 
-        // Use new Client Credentials token logic if API key fails (or update this to use RC if decided)
-        const smsResponse = await fetch(`https://connect.beetexting.com/prod/message/sendsms?${params.toString()}`, {
-          method: 'POST',
-          headers: {
-            'x-api-key': beetextingApiKey
-          }
-        });
-
-        if (!smsResponse.ok) {
-           console.error('Beetexting SMS failed:', await smsResponse.text());
-        } else {
-           console.log('Beetexting SMS sent successfully');
-        }
-      } catch (smsError) {
-        console.error('Failed to send Beetexting SMS:', smsError);
+        const data = await response.json();
+        console.log('RingCentral SMS sent. Status:', data.messageStatus);
+      } catch (rcError: any) {
+        console.error('Failed to send RingCentral SMS:', rcError?.message || rcError);
       }
     } else {
-        console.log('Skipping SMS notification: Missing environment variables');
+        console.log('Skipping SMS notification: Missing RingCentral environment variables');
     }
 
     // Success response

@@ -91,6 +91,17 @@ CONTACT_FROM_NAME=Colorado CareAssist Website
 3. Create a new API key
 4. Verify your sender email address (`CONTACT_FROM_EMAIL`)
 
+#### RingCentral SMS (Optional)
+To receive SMS notifications for new leads:
+```env
+RINGCENTRAL_CLIENT_ID=your_client_id
+RINGCENTRAL_CLIENT_SECRET=your_client_secret
+RINGCENTRAL_SERVER=https://platform.ringcentral.com
+RINGCENTRAL_JWT=your_jwt_token
+RINGCENTRAL_FROM_NUMBER=your_rc_number
+RINGCENTRAL_TO_NUMBER=your_mobile_number
+```
+
 #### Facebook Messenger (Chat)
 ```env
 NEXT_PUBLIC_FACEBOOK_PAGE_ID=532744706873716
