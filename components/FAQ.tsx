@@ -135,10 +135,10 @@ const faqs: FAQItem[] = [
       <>
         <p>We serve clients throughout the Colorado Front Range, including:</p>
         <ul>
-          <li>Boulder and Broomfield</li>
-          <li>Denver Metro</li>
+          <li>Boulder County and Broomfield County</li>
+          <li>Denver County</li>
           <li>Adams, Jefferson, Douglas, and Arapahoe Counties</li>
-          <li>Colorado Springs, El Paso County, and Pueblo</li>
+          <li>Colorado Springs (El Paso County) and Pueblo County</li>
         </ul>
         <p>If a location falls outside our service area, we’ll say so directly.</p>
       </>
