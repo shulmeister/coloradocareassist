@@ -521,8 +521,8 @@
 
 /* CTA Section */
 .ctaSection {
-  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-  color: white;
+  background: var(--color-leaf-light);
+  color: var(--color-charcoal);
   padding: var(--spacing-3xl) var(--container-padding);
   margin: var(--spacing-3xl) calc(var(--container-padding) * -1) 0;
   text-align: center;
@@ -530,17 +530,18 @@
 
 .ctaSection h2 {
   font-size: 2.5rem;
-  color: white;
+  color: var(--color-brown);
   margin-bottom: var(--spacing-md);
 }
 
 .ctaSection > p {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-charcoal);
   margin-bottom: var(--spacing-xl);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.9;
 }
 
 .ctaButtons {
@@ -553,7 +554,7 @@
 
 .primaryButton {
   padding: 1rem 2rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-leaf-dark);
   color: white;
   font-weight: 600;
   border-radius: var(--radius-md);
@@ -564,7 +565,7 @@
 }
 
 .primaryButton:hover {
-  background-color: #b91c1c;
+  background-color: var(--color-brown);
   transform: translateY(-2px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
   color: white;
@@ -573,46 +574,51 @@
 .secondaryButton,
 .phoneButton {
   padding: 1rem 2rem;
-  background-color: white;
-  color: var(--color-primary);
+  background-color: transparent;
+  color: var(--color-brown);
   font-weight: 600;
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
   text-decoration: none;
   display: inline-block;
+  border: 2px solid var(--color-olive);
 }
 
 .secondaryButton:hover,
 .phoneButton:hover {
-  background-color: #f9fafb;
+  background-color: var(--color-olive);
   transform: translateY(-2px);
-  color: var(--color-primary-dark);
+  color: white;
 }
 
 .ctaNote {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-charcoal);
   font-size: 1rem;
   margin: var(--spacing-md) 0 0;
+  opacity: 0.8;
 }
 
 /* Application Info */
 .applicationInfo {
   max-width: 700px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: white;
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
   margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .applicationInfo h3 {
-  color: white;
+  color: var(--color-brown);
   margin-bottom: var(--spacing-md);
+  font-size: 1.5rem;
 }
 
 .applicationInfo p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-charcoal);
   margin-bottom: var(--spacing-md);
 }
 
@@ -622,7 +628,7 @@
 }
 
 .applicationEmail a {
-  color: white;
+  color: var(--color-leaf-dark);
   text-decoration: underline;
 }
 
