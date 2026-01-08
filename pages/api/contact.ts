@@ -177,6 +177,30 @@ export default async function handler(
     apiKey.apiKey = brevoApiKey;
     
     const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+    const contactsApiInstance = new SibApiV3Sdk.ContactsApi();
+    
+    // Save contact to Brevo (Sendinblue) Contacts List
+    try {
+        const createContact = new SibApiV3Sdk.CreateContact();
+        createContact.email = formData.email;
+        createContact.attributes = {
+            FIRSTNAME: formData.name.split(' ')[0],
+            LASTNAME: formData.name.split(' ').slice(1).join(' ') || '',
+            PHONE: formData.phone,
+            SMS: formData.phone, // For SMS marketing if enabled
+            LOCATION: formData.location,
+            CARE_NEEDS: formData.care_needs
+        };
+        createContact.listIds = [2]; // Assuming list ID 2 is for 'Website Leads' - typically 2 or first custom list
+        createContact.updateEnabled = true; // Update if exists
+
+        await contactsApiInstance.createContact(createContact);
+        console.log('Contact added to Brevo list.');
+    } catch (contactError: any) {
+        // If error is "Contact already exists", we can ignore or update (updateEnabled handles update)
+        // Log but don't fail the request
+        console.log('Note: Contact sync to Brevo list skipped/failed:', contactError?.response?.body?.message || contactError.message);
+    }
 
     // Prepare email content
     const emailHtml = `
