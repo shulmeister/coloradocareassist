@@ -75,7 +75,7 @@ export default function About() {
                 <h3>✓ Uncompromising Safety Standards</h3>
                 <p>
                   CBI background checks, CAPS verification, DMV checks, random drug testing throughout the 
-                  year, millions in liability insurance, and honesty bonds. We don't cut corners on safety.
+                  year, $3 million in liability insurance, and honesty bonds. We don't cut corners on safety.
                 </p>
               </div>
 

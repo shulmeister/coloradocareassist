@@ -65,7 +65,7 @@ export default function Home() {
               <div className={styles.trustIcon}>🛡️</div>
               <div className={styles.trustText}>
                 <strong>Fully Insured & Bonded</strong>
-                <span>Millions in liability coverage</span>
+                <span>$3 million in liability coverage</span>
               </div>
             </div>
             <div className={styles.trustItem}>
@@ -217,7 +217,7 @@ export default function Home() {
             <div className={styles.standardCard}>
               <div className={styles.standardBadge}>✓</div>
               <h3>Liability Insurance</h3>
-              <p>Millions of dollars in liability coverage and honesty bonds for your protection.</p>
+              <p>$3 million in liability coverage and honesty bonds for your protection.</p>
             </div>
 
             <div className={styles.standardCard}>

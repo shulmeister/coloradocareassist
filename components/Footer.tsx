@@ -117,7 +117,7 @@ export default function Footer() {
               </svg>
             </a>
             <a 
-              href="https://twitter.com/ColoradoCare" 
+              href="https://x.com/jasonshulman" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.socialLink}
