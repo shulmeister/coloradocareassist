@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -18,20 +19,24 @@ export default function Layout({
   ogImage = '/og-image.jpg',
   noIndex = false
 }: LayoutProps) {
+  const router = useRouter();
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://coloradocareassist.com';
+  // Canonical URL: Apex domain + path (without query params)
+  const canonicalUrl = `${siteUrl}${router.asPath.split('?')[0]}`;
   
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalUrl} />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-        <meta property="og:url" content={siteUrl} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="Colorado CareAssist" />
         
         {/* Twitter Card */}
@@ -42,6 +47,7 @@ export default function Layout({
         
         {/* SEO */}
         {noIndex && <meta name="robots" content="noindex, nofollow" />}
+        {!noIndex && <meta name="robots" content="index, follow" />}
       </Head>
       
       <Header />
@@ -50,4 +56,3 @@ export default function Layout({
     </>
   );
 }
-
