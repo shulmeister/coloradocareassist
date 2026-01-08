@@ -1,23 +1,9 @@
 import { SWRConfig } from 'swr';
 import type { AppProps } from 'next/app';
-import { Montserrat, Lato } from 'next/font/google';
 import '@/styles/globals.css';
 import FacebookMessenger from '@/components/integrations/FacebookMessenger';
 import Analytics from '@/components/integrations/Analytics';
 import CookieConsent from '@/components/CookieConsent';
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
-});
-
-const lato = Lato({
-  weight: ['400', '700', '900'],
-  subsets: ['latin'],
-  variable: '--font-lato',
-  display: 'swap',
-});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -29,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         },
       }}
     >
-      <main className={`${montserrat.variable} ${lato.variable}`}>
+      <main>
         <Component {...pageProps} />
         <FacebookMessenger />
         <Analytics />
