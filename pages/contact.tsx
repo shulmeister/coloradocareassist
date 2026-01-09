@@ -126,7 +126,7 @@ export default function Contact() {
                 <h2>⏰ Response Time</h2>
                 <p>
                   We typically respond within 24 hours on business days. 
-                  For urgent needs, please call us directly.
+                  For urgent needs, call us directly, as we answer our phones 7/24/365.
                 </p>
               </div>
             </div>
