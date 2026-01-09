@@ -1,6 +1,5 @@
 import { SWRConfig } from 'swr';
 import type { AppProps } from 'next/app';
-import Script from 'next/script';
 import '@/styles/globals.css';
 import FacebookMessenger from '@/components/integrations/FacebookMessenger';
 import Analytics from '@/components/integrations/Analytics';
@@ -21,22 +20,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <FacebookMessenger />
         <Analytics />
         <CookieConsent />
-        {/* Brevo (Sendinblue) SDK */}
-        <Script 
-          src="https://cdn.brevo.com/js/sdk-loader.js" 
-          strategy="lazyOnload" 
-        />
-        <Script id="brevo-init" strategy="lazyOnload">
-          {`
-            window.Brevo = window.Brevo || [];
-            Brevo.push([
-                "init",
-                {
-                client_key: "zohlf9pja1k6du3epy2j415y",
-                }
-            ]);
-          `}
-        </Script>
       </main>
     </SWRConfig>
   );
