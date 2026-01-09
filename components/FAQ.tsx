@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import styles from './FAQ.module.css';
 
 interface FAQItem {
@@ -153,8 +154,46 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Convert FAQ items to text for schema (strip JSX)
+  const getFAQText = (answer: React.ReactNode): string => {
+    if (typeof answer === 'string') return answer;
+    // For JSX, extract text content
+    const extractText = (node: React.ReactNode): string => {
+      if (typeof node === 'string') return node;
+      if (typeof node === 'number') return node.toString();
+      if (Array.isArray(node)) return node.map(extractText).join(' ');
+      if (node && typeof node === 'object' && 'props' in node) {
+        const props = (node as any).props;
+        if (props.children) return extractText(props.children);
+      }
+      return '';
+    };
+    return extractText(answer).replace(/\s+/g, ' ').trim();
+  };
+
+  // Generate FAQPage schema
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: getFAQText(faq.answer)
+      }
+    }))
+  };
+
   return (
-    <section id="faq" className={styles.faqSection}>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </Head>
+      <section id="faq" className={styles.faqSection}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2>Frequently Asked Questions</h2>
@@ -189,5 +228,6 @@ export default function FAQ() {
         </div>
       </div>
     </section>
+    </>
   );
 }

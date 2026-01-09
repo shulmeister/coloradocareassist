@@ -7,6 +7,7 @@ export default function DementiaCare() {
     <Layout
       title="Dementia & Alzheimer's Care - Colorado CareAssist"
       description="Expert dementia and Alzheimer's home care in Colorado. Specialized training, compassionate caregivers. Serving Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo."
+      pageType="dementia"
     >
       <div className={styles.page}>
         <div className={styles.hero}>

@@ -72,6 +72,7 @@ export default function Contact() {
     <Layout
       title="Contact Us - Colorado CareAssist"
       description="Request a care plan or talk to a care manager. Serving Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo. Call (303) 757-1777 or (719) 428-3999."
+      pageType="contact"
     >
       <div className={styles.contactPage}>
         <div className="container">

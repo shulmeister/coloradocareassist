@@ -25,6 +25,10 @@ export default function BlogPost({ postData }: BlogPostProps) {
       title={`${postData.title} - Colorado CareAssist Blog`}
       description={postData.excerpt}
       ogImage="/images/hero.jpg" // Fallback, could be dynamic per post
+      pageType="blog"
+      datePublished={postData.date}
+      dateModified={postData.date}
+      author={postData.author}
     >
       <div style={{ backgroundColor: 'var(--color-off-white)', paddingBottom: 'var(--s7)' }}>
         {/* Simple decorative header background */}

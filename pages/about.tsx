@@ -7,6 +7,7 @@ export default function About() {
     <Layout
       title="About Us - Colorado CareAssist"
       description="Family-owned home care agency serving Colorado since 2012. Independent, not a franchise. Premium care with the highest safety standards. Denver, Boulder, Colorado Springs & Pueblo."
+      pageType="about"
     >
       <div className={styles.page}>
         <div className={styles.hero}>

@@ -8,25 +8,27 @@ export default function Veterans() {
     <Layout
       title="Veterans Home Care - Colorado CareAssist"
       description="Specialized home care for veterans in Colorado. VA benefits assistance available. Caregivers trained in veterans care. Serving Boulder, Broomfield, Denver, Adams, Jefferson, Douglas, Arapahoe, El Paso, Pueblo."
+      pageType="veterans"
     >
       <div className={styles.page}>
         <div className={styles.hero} style={{ position: 'relative' }}>
-          <div style={{ 
-            position: 'absolute', 
-            top: 0, 
-            left: 0, 
-            right: 0, 
-            bottom: 0, 
-            zIndex: 0 
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 0
           }}>
-            <Image 
-              src="/images/veterans.jpg" 
-              alt="Veteran with service dog" 
+            <Image
+              src="/images/veterans.jpg"
+              alt="Veteran with service dog"
               fill
-              style={{ 
-                objectFit: 'cover', 
-                opacity: 0.25 
-              }} 
+              loading="lazy"
+              style={{
+                objectFit: 'cover',
+                opacity: 0.25
+              }}
             />
           </div>
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>

@@ -292,17 +292,29 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
 
     // Send Auto-Reply to the user
     try {
+      // Determine appropriate phone number based on location
+      const locationLower = (formData.location || '').toLowerCase();
+      const southKeywords = ['pueblo', 'springs', 'el paso', 'monument', 'fountain', 'canon city'];
+      const isSouth = southKeywords.some(keyword => locationLower.includes(keyword));
+      
+      const phoneDisplay = isSouth 
+        ? '(719) 428-3999' 
+        : '(303) 757-1777';
+
       const autoReplyHtml = `
         <html>
           <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
-              <h2 style="color: #2563eb;">We received your request</h2>
+              <div style="text-align: center; margin-bottom: 20px;">
+                <img src="https://coloradocareassist.com/images/Stacked-Full-Color-on-Light.png" alt="Colorado CareAssist" style="max-width: 200px; height: auto;">
+              </div>
+              <h2 style="color: #2563eb; text-align: center;">We received your request</h2>
               <p>Dear ${formData.name},</p>
               <p>Thank you for contacting Colorado CareAssist. We have received your request for a care plan.</p>
               <p>One of our care managers will review your information and contact you shortly (usually within 24 hours) to discuss your needs.</p>
               <div style="background-color: #f3f4f6; padding: 15px; border-radius: 6px; margin: 20px 0;">
                 <p style="margin: 0;"><strong>If this is an urgent matter, please call us directly:</strong></p>
-                <p style="margin: 10px 0 0 0; font-size: 18px; font-weight: bold;">(303) 757-1777</p>
+                <p style="margin: 10px 0 0 0; font-size: 18px; font-weight: bold;">${phoneDisplay}</p>
               </div>
               <p>Best regards,</p>
               <p><strong>The Colorado CareAssist Team</strong><br>
@@ -317,7 +329,7 @@ Submitted: ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })}
         to: [{ email: formData.email, name: formData.name }],
         subject: "We received your request - Colorado CareAssist",
         htmlContent: autoReplyHtml,
-        textContent: `Dear ${formData.name},\n\nThank you for contacting Colorado CareAssist. We have received your request for a care plan.\n\nOne of our care managers will review your information and contact you shortly.\n\nIf this is an urgent matter, please call us directly at (303) 757-1777.\n\nBest regards,\nThe Colorado CareAssist Team`
+        textContent: `Dear ${formData.name},\n\nThank you for contacting Colorado CareAssist. We have received your request for a care plan.\n\nOne of our care managers will review your information and contact you shortly.\n\nIf this is an urgent matter, please call us directly at ${phoneDisplay}.\n\nBest regards,\nThe Colorado CareAssist Team`
       };
 
       await apiInstance.sendTransacEmail(sendAutoReply);
