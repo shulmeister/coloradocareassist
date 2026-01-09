@@ -6,7 +6,7 @@ export default function Analytics() {
   // Default to true unless explicitly disabled
   const analyticsEnabled = process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== 'false';
   
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WZXV765S';
   // Use env var or fallback to known correct ID
   const ga4Id = process.env.NEXT_PUBLIC_GA4_ID || 'G-PNPKTPZ49H';
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-16672094756';
