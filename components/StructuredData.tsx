@@ -374,7 +374,7 @@ export default function StructuredData({
   } : null;
 
   // Compile schemas based on page type
-  const schemas = [organizationSchema, webPageSchema];
+  const schemas: any[] = [organizationSchema, webPageSchema];
 
   if (type === 'home') {
     schemas.push(websiteSchema, localBusinessSchema);
